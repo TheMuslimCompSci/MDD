@@ -1,0 +1,5 @@
+{
+	&origin&:[&"Test" #myFriend#&],
+	&hello&:[&"yellow"&],
+	&myFriend&:[&"hello"&, &#hello#&]
+}
