@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="traceryLanguage" nsURI="http://www.ac.uk/kcl/inf/languages/tracery/TraceryLanguage"
+    nsPrefix="traceryLanguage">
+  <eClassifiers xsi:type="ecore:EClass" name="TraceryProgram">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1"
+        eType="#//StandardJSONStatement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="startingInstruction" eType="#//StartingJSONStatement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InitialJSONExpression" eSuperTypes="#//StandardJSONStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//VariableDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialValues" upperBound="-1"
+        eType="#//initialValue" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="standardValues" upperBound="-1"
+        eType="#//standardValue" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="initialValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" upperBound="-1"
+        eType="#//InternalInstruction" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InternalInstruction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StandardJSONStatement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StartingJSONStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialValues" upperBound="-1"
+        eType="#//initialValue" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="standardValues" upperBound="-1"
+        eType="#//standardValue" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="standardValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" upperBound="-1"
+        eType="#//InternalInstruction" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableDeclaration" eSuperTypes="#//InternalInstruction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

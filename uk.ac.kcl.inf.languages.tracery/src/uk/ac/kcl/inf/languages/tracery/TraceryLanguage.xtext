@@ -1,0 +1,44 @@
+grammar uk.ac.kcl.inf.languages.tracery.TraceryLanguage with org.eclipse.xtext.common.Terminals
+
+generate traceryLanguage "http://www.ac.uk/kcl/inf/languages/tracery/TraceryLanguage"
+
+TraceryProgram:
+	'{'
+		{TraceryProgram}
+		instructions += StandardJSONStatement*
+		startingInstruction = StartingJSONStatement
+	'}'
+;
+
+InitialJSONExpression hidden():
+	var=[VariableDeclaration]
+;
+
+initialValue hidden(WS):
+	{initialValue} '&'value+=InternalInstruction*'&'
+;
+
+InternalInstruction hidden():
+	value=STRING |
+	'#'VariableDeclaration'.a#' |
+	'#'VariableDeclaration'.capitalise#' |
+  	'#'VariableDeclaration'.ed#' |
+  	'#'VariableDeclaration'.the#' |
+	'#'VariableDeclaration'#' 
+;
+
+StandardJSONStatement hidden(WS):
+	',''&'InitialJSONExpression'&' ':' '[' initialValues+=initialValue standardValues+=standardValue* ']' 
+;
+
+StartingJSONStatement hidden(WS):
+	'&origin&' ':' '[' initialValues+=initialValue standardValues+=standardValue* ']'
+;
+
+standardValue hidden(WS):
+	{standardValue} ',''&'value+=InternalInstruction*'&'
+;
+
+VariableDeclaration hidden():
+	name=ID
+;
