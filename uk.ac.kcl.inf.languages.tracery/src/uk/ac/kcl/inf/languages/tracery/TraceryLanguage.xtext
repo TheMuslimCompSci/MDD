@@ -5,8 +5,8 @@ generate traceryLanguage "http://www.ac.uk/kcl/inf/languages/tracery/TraceryLang
 TraceryProgram:
 	'{'
 		{TraceryProgram}
-		instructions += StandardJSONStatement*
 		startingInstruction = StartingJSONStatement
+		instructions += StandardJSONStatement*
 	'}'
 ;
 

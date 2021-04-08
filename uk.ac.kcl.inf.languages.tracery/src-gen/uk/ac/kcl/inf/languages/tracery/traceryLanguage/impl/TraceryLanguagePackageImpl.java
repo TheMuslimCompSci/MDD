@@ -165,7 +165,7 @@ public class TraceryLanguagePackageImpl extends EPackageImpl implements TraceryL
    * @generated
    */
   @Override
-  public EReference getTraceryProgram_Instructions()
+  public EReference getTraceryProgram_StartingInstruction()
   {
     return (EReference)traceryProgramEClass.getEStructuralFeatures().get(0);
   }
@@ -176,7 +176,7 @@ public class TraceryLanguagePackageImpl extends EPackageImpl implements TraceryL
    * @generated
    */
   @Override
-  public EReference getTraceryProgram_StartingInstruction()
+  public EReference getTraceryProgram_Instructions()
   {
     return (EReference)traceryProgramEClass.getEStructuralFeatures().get(1);
   }
@@ -389,8 +389,8 @@ public class TraceryLanguagePackageImpl extends EPackageImpl implements TraceryL
 
     // Create classes and their features
     traceryProgramEClass = createEClass(TRACERY_PROGRAM);
-    createEReference(traceryProgramEClass, TRACERY_PROGRAM__INSTRUCTIONS);
     createEReference(traceryProgramEClass, TRACERY_PROGRAM__STARTING_INSTRUCTION);
+    createEReference(traceryProgramEClass, TRACERY_PROGRAM__INSTRUCTIONS);
 
     initialJSONExpressionEClass = createEClass(INITIAL_JSON_EXPRESSION);
     createEReference(initialJSONExpressionEClass, INITIAL_JSON_EXPRESSION__VAR);
@@ -450,8 +450,8 @@ public class TraceryLanguagePackageImpl extends EPackageImpl implements TraceryL
 
     // Initialize classes and features; add operations and parameters
     initEClass(traceryProgramEClass, TraceryProgram.class, "TraceryProgram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTraceryProgram_Instructions(), this.getStandardJSONStatement(), null, "instructions", null, 0, -1, TraceryProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTraceryProgram_StartingInstruction(), this.getStartingJSONStatement(), null, "startingInstruction", null, 0, 1, TraceryProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTraceryProgram_Instructions(), this.getStandardJSONStatement(), null, "instructions", null, 0, -1, TraceryProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(initialJSONExpressionEClass, InitialJSONExpression.class, "InitialJSONExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getInitialJSONExpression_Var(), this.getVariableDeclaration(), null, "var", null, 0, 1, InitialJSONExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

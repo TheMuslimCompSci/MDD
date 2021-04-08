@@ -29,20 +29,20 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Action cTraceryProgramAction_1 = (Action)cGroup.eContents().get(1);
-		private final Assignment cInstructionsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cInstructionsStandardJSONStatementParserRuleCall_2_0 = (RuleCall)cInstructionsAssignment_2.eContents().get(0);
-		private final Assignment cStartingInstructionAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cStartingInstructionStartingJSONStatementParserRuleCall_3_0 = (RuleCall)cStartingInstructionAssignment_3.eContents().get(0);
+		private final Assignment cStartingInstructionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cStartingInstructionStartingJSONStatementParserRuleCall_2_0 = (RuleCall)cStartingInstructionAssignment_2.eContents().get(0);
+		private final Assignment cInstructionsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cInstructionsStandardJSONStatementParserRuleCall_3_0 = (RuleCall)cInstructionsAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//TraceryProgram:
-		//	'{' {TraceryProgram} instructions+=StandardJSONStatement*
-		//	startingInstruction=StartingJSONStatement
+		//	'{' {TraceryProgram} startingInstruction=StartingJSONStatement
+		//	instructions+=StandardJSONStatement*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'{' {TraceryProgram} instructions+=StandardJSONStatement*
-		//startingInstruction=StartingJSONStatement
+		//'{' {TraceryProgram} startingInstruction=StartingJSONStatement
+		//instructions+=StandardJSONStatement*
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
@@ -52,17 +52,17 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		//{TraceryProgram}
 		public Action getTraceryProgramAction_1() { return cTraceryProgramAction_1; }
 		
-		//instructions+=StandardJSONStatement*
-		public Assignment getInstructionsAssignment_2() { return cInstructionsAssignment_2; }
-		
-		//StandardJSONStatement
-		public RuleCall getInstructionsStandardJSONStatementParserRuleCall_2_0() { return cInstructionsStandardJSONStatementParserRuleCall_2_0; }
-		
 		//startingInstruction=StartingJSONStatement
-		public Assignment getStartingInstructionAssignment_3() { return cStartingInstructionAssignment_3; }
+		public Assignment getStartingInstructionAssignment_2() { return cStartingInstructionAssignment_2; }
 		
 		//StartingJSONStatement
-		public RuleCall getStartingInstructionStartingJSONStatementParserRuleCall_3_0() { return cStartingInstructionStartingJSONStatementParserRuleCall_3_0; }
+		public RuleCall getStartingInstructionStartingJSONStatementParserRuleCall_2_0() { return cStartingInstructionStartingJSONStatementParserRuleCall_2_0; }
+		
+		//instructions+=StandardJSONStatement*
+		public Assignment getInstructionsAssignment_3() { return cInstructionsAssignment_3; }
+		
+		//StandardJSONStatement
+		public RuleCall getInstructionsStandardJSONStatementParserRuleCall_3_0() { return cInstructionsStandardJSONStatementParserRuleCall_3_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
@@ -432,8 +432,8 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 
 	
 	//TraceryProgram:
-	//	'{' {TraceryProgram} instructions+=StandardJSONStatement*
-	//	startingInstruction=StartingJSONStatement
+	//	'{' {TraceryProgram} startingInstruction=StartingJSONStatement
+	//	instructions+=StandardJSONStatement*
 	//	'}';
 	public TraceryProgramElements getTraceryProgramAccess() {
 		return pTraceryProgram;

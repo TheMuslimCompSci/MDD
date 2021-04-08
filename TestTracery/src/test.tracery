@@ -1,5 +1,5 @@
 {
-	&origin&:[&"Test" #myFriend#&],
-	&hello&:[&"yellow"&],
-	&myFriend&:[&"hello"&, &#hello#&]
+	&origin&:[&"test" #myTest#&],
+	&hello&:[&"blue"&],
+	&myTest&:[&"hello"&, &#hello#&]
 }

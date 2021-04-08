@@ -136,7 +136,7 @@ public class TraceryLanguageSemanticSequencer extends AbstractDelegatingSemantic
 	 *     TraceryProgram returns TraceryProgram
 	 *
 	 * Constraint:
-	 *     (instructions+=StandardJSONStatement* startingInstruction=StartingJSONStatement)
+	 *     (startingInstruction=StartingJSONStatement instructions+=StandardJSONStatement*)
 	 */
 	protected void sequence_TraceryProgram(ISerializationContext context, TraceryProgram semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

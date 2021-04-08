@@ -68,22 +68,22 @@ public interface TraceryLanguagePackage extends EPackage
   int TRACERY_PROGRAM = 0;
 
   /**
-   * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRACERY_PROGRAM__INSTRUCTIONS = 0;
-
-  /**
    * The feature id for the '<em><b>Starting Instruction</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TRACERY_PROGRAM__STARTING_INSTRUCTION = 1;
+  int TRACERY_PROGRAM__STARTING_INSTRUCTION = 0;
+
+  /**
+   * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRACERY_PROGRAM__INSTRUCTIONS = 1;
 
   /**
    * The number of structural features of the '<em>Tracery Program</em>' class.
@@ -329,17 +329,6 @@ public interface TraceryLanguagePackage extends EPackage
   EClass getTraceryProgram();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram#getInstructions <em>Instructions</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Instructions</em>'.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram#getInstructions()
-   * @see #getTraceryProgram()
-   * @generated
-   */
-  EReference getTraceryProgram_Instructions();
-
-  /**
    * Returns the meta object for the containment reference '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram#getStartingInstruction <em>Starting Instruction</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -349,6 +338,17 @@ public interface TraceryLanguagePackage extends EPackage
    * @generated
    */
   EReference getTraceryProgram_StartingInstruction();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram#getInstructions <em>Instructions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Instructions</em>'.
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram#getInstructions()
+   * @see #getTraceryProgram()
+   * @generated
+   */
+  EReference getTraceryProgram_Instructions();
 
   /**
    * Returns the meta object for class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONExpression <em>Initial JSON Expression</em>}'.
@@ -553,20 +553,20 @@ public interface TraceryLanguagePackage extends EPackage
     EClass TRACERY_PROGRAM = eINSTANCE.getTraceryProgram();
 
     /**
-     * The meta object literal for the '<em><b>Instructions</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TRACERY_PROGRAM__INSTRUCTIONS = eINSTANCE.getTraceryProgram_Instructions();
-
-    /**
      * The meta object literal for the '<em><b>Starting Instruction</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference TRACERY_PROGRAM__STARTING_INSTRUCTION = eINSTANCE.getTraceryProgram_StartingInstruction();
+
+    /**
+     * The meta object literal for the '<em><b>Instructions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TRACERY_PROGRAM__INSTRUCTIONS = eINSTANCE.getTraceryProgram_Instructions();
 
     /**
      * The meta object literal for the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.InitialJSONExpressionImpl <em>Initial JSON Expression</em>}' class.

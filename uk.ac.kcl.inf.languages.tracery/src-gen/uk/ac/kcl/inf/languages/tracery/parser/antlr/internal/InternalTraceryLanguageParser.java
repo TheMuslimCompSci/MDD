@@ -121,26 +121,26 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTraceryProgram"
-    // InternalTraceryLanguage.g:71:1: ruleTraceryProgram returns [EObject current=null] : (otherlv_0= '{' () ( (lv_instructions_2_0= ruleStandardJSONStatement ) )* ( (lv_startingInstruction_3_0= ruleStartingJSONStatement ) ) otherlv_4= '}' ) ;
+    // InternalTraceryLanguage.g:71:1: ruleTraceryProgram returns [EObject current=null] : (otherlv_0= '{' () ( (lv_startingInstruction_2_0= ruleStartingJSONStatement ) ) ( (lv_instructions_3_0= ruleStandardJSONStatement ) )* otherlv_4= '}' ) ;
     public final EObject ruleTraceryProgram() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_4=null;
-        EObject lv_instructions_2_0 = null;
+        EObject lv_startingInstruction_2_0 = null;
 
-        EObject lv_startingInstruction_3_0 = null;
+        EObject lv_instructions_3_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalTraceryLanguage.g:77:2: ( (otherlv_0= '{' () ( (lv_instructions_2_0= ruleStandardJSONStatement ) )* ( (lv_startingInstruction_3_0= ruleStartingJSONStatement ) ) otherlv_4= '}' ) )
-            // InternalTraceryLanguage.g:78:2: (otherlv_0= '{' () ( (lv_instructions_2_0= ruleStandardJSONStatement ) )* ( (lv_startingInstruction_3_0= ruleStartingJSONStatement ) ) otherlv_4= '}' )
+            // InternalTraceryLanguage.g:77:2: ( (otherlv_0= '{' () ( (lv_startingInstruction_2_0= ruleStartingJSONStatement ) ) ( (lv_instructions_3_0= ruleStandardJSONStatement ) )* otherlv_4= '}' ) )
+            // InternalTraceryLanguage.g:78:2: (otherlv_0= '{' () ( (lv_startingInstruction_2_0= ruleStartingJSONStatement ) ) ( (lv_instructions_3_0= ruleStandardJSONStatement ) )* otherlv_4= '}' )
             {
-            // InternalTraceryLanguage.g:78:2: (otherlv_0= '{' () ( (lv_instructions_2_0= ruleStandardJSONStatement ) )* ( (lv_startingInstruction_3_0= ruleStartingJSONStatement ) ) otherlv_4= '}' )
-            // InternalTraceryLanguage.g:79:3: otherlv_0= '{' () ( (lv_instructions_2_0= ruleStandardJSONStatement ) )* ( (lv_startingInstruction_3_0= ruleStartingJSONStatement ) ) otherlv_4= '}'
+            // InternalTraceryLanguage.g:78:2: (otherlv_0= '{' () ( (lv_startingInstruction_2_0= ruleStartingJSONStatement ) ) ( (lv_instructions_3_0= ruleStandardJSONStatement ) )* otherlv_4= '}' )
+            // InternalTraceryLanguage.g:79:3: otherlv_0= '{' () ( (lv_startingInstruction_2_0= ruleStartingJSONStatement ) ) ( (lv_instructions_3_0= ruleStandardJSONStatement ) )* otherlv_4= '}'
             {
             otherlv_0=(Token)match(input,11,FOLLOW_3); 
 
@@ -157,7 +157,38 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTraceryLanguage.g:90:3: ( (lv_instructions_2_0= ruleStandardJSONStatement ) )*
+            // InternalTraceryLanguage.g:90:3: ( (lv_startingInstruction_2_0= ruleStartingJSONStatement ) )
+            // InternalTraceryLanguage.g:91:4: (lv_startingInstruction_2_0= ruleStartingJSONStatement )
+            {
+            // InternalTraceryLanguage.g:91:4: (lv_startingInstruction_2_0= ruleStartingJSONStatement )
+            // InternalTraceryLanguage.g:92:5: lv_startingInstruction_2_0= ruleStartingJSONStatement
+            {
+
+            					newCompositeNode(grammarAccess.getTraceryProgramAccess().getStartingInstructionStartingJSONStatementParserRuleCall_2_0());
+            				
+            pushFollow(FOLLOW_4);
+            lv_startingInstruction_2_0=ruleStartingJSONStatement();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getTraceryProgramRule());
+            					}
+            					set(
+            						current,
+            						"startingInstruction",
+            						lv_startingInstruction_2_0,
+            						"uk.ac.kcl.inf.languages.tracery.TraceryLanguage.StartingJSONStatement");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            // InternalTraceryLanguage.g:109:3: ( (lv_instructions_3_0= ruleStandardJSONStatement ) )*
             loop1:
             do {
                 int alt1=2;
@@ -170,16 +201,16 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
                 switch (alt1) {
             	case 1 :
-            	    // InternalTraceryLanguage.g:91:4: (lv_instructions_2_0= ruleStandardJSONStatement )
+            	    // InternalTraceryLanguage.g:110:4: (lv_instructions_3_0= ruleStandardJSONStatement )
             	    {
-            	    // InternalTraceryLanguage.g:91:4: (lv_instructions_2_0= ruleStandardJSONStatement )
-            	    // InternalTraceryLanguage.g:92:5: lv_instructions_2_0= ruleStandardJSONStatement
+            	    // InternalTraceryLanguage.g:110:4: (lv_instructions_3_0= ruleStandardJSONStatement )
+            	    // InternalTraceryLanguage.g:111:5: lv_instructions_3_0= ruleStandardJSONStatement
             	    {
 
-            	    					newCompositeNode(grammarAccess.getTraceryProgramAccess().getInstructionsStandardJSONStatementParserRuleCall_2_0());
+            	    					newCompositeNode(grammarAccess.getTraceryProgramAccess().getInstructionsStandardJSONStatementParserRuleCall_3_0());
             	    				
-            	    pushFollow(FOLLOW_3);
-            	    lv_instructions_2_0=ruleStandardJSONStatement();
+            	    pushFollow(FOLLOW_4);
+            	    lv_instructions_3_0=ruleStandardJSONStatement();
 
             	    state._fsp--;
 
@@ -190,7 +221,7 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
             	    					add(
             	    						current,
             	    						"instructions",
-            	    						lv_instructions_2_0,
+            	    						lv_instructions_3_0,
             	    						"uk.ac.kcl.inf.languages.tracery.TraceryLanguage.StandardJSONStatement");
             	    					afterParserOrEnumRuleCall();
             	    				
@@ -205,37 +236,6 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
             	    break loop1;
                 }
             } while (true);
-
-            // InternalTraceryLanguage.g:109:3: ( (lv_startingInstruction_3_0= ruleStartingJSONStatement ) )
-            // InternalTraceryLanguage.g:110:4: (lv_startingInstruction_3_0= ruleStartingJSONStatement )
-            {
-            // InternalTraceryLanguage.g:110:4: (lv_startingInstruction_3_0= ruleStartingJSONStatement )
-            // InternalTraceryLanguage.g:111:5: lv_startingInstruction_3_0= ruleStartingJSONStatement
-            {
-
-            					newCompositeNode(grammarAccess.getTraceryProgramAccess().getStartingInstructionStartingJSONStatementParserRuleCall_3_0());
-            				
-            pushFollow(FOLLOW_4);
-            lv_startingInstruction_3_0=ruleStartingJSONStatement();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getTraceryProgramRule());
-            					}
-            					set(
-            						current,
-            						"startingInstruction",
-            						lv_startingInstruction_3_0,
-            						"uk.ac.kcl.inf.languages.tracery.TraceryLanguage.StartingJSONStatement");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
 
             otherlv_4=(Token)match(input,12,FOLLOW_2); 
 
@@ -1544,8 +1544,8 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000880000L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000081000L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000006020L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000008000L});

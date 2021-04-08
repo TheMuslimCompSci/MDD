@@ -1146,7 +1146,7 @@ public class InternalTraceryLanguageParser extends AbstractInternalContentAssist
             // InternalTraceryLanguage.g:411:1: ( rule__TraceryProgram__Group__2__Impl rule__TraceryProgram__Group__3 )
             // InternalTraceryLanguage.g:412:2: rule__TraceryProgram__Group__2__Impl rule__TraceryProgram__Group__3
             {
-            pushFollow(FOLLOW_3);
+            pushFollow(FOLLOW_4);
             rule__TraceryProgram__Group__2__Impl();
 
             state._fsp--;
@@ -1175,49 +1175,31 @@ public class InternalTraceryLanguageParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__TraceryProgram__Group__2__Impl"
-    // InternalTraceryLanguage.g:419:1: rule__TraceryProgram__Group__2__Impl : ( ( rule__TraceryProgram__InstructionsAssignment_2 )* ) ;
+    // InternalTraceryLanguage.g:419:1: rule__TraceryProgram__Group__2__Impl : ( ( rule__TraceryProgram__StartingInstructionAssignment_2 ) ) ;
     public final void rule__TraceryProgram__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryLanguage.g:423:1: ( ( ( rule__TraceryProgram__InstructionsAssignment_2 )* ) )
-            // InternalTraceryLanguage.g:424:1: ( ( rule__TraceryProgram__InstructionsAssignment_2 )* )
+            // InternalTraceryLanguage.g:423:1: ( ( ( rule__TraceryProgram__StartingInstructionAssignment_2 ) ) )
+            // InternalTraceryLanguage.g:424:1: ( ( rule__TraceryProgram__StartingInstructionAssignment_2 ) )
             {
-            // InternalTraceryLanguage.g:424:1: ( ( rule__TraceryProgram__InstructionsAssignment_2 )* )
-            // InternalTraceryLanguage.g:425:2: ( rule__TraceryProgram__InstructionsAssignment_2 )*
+            // InternalTraceryLanguage.g:424:1: ( ( rule__TraceryProgram__StartingInstructionAssignment_2 ) )
+            // InternalTraceryLanguage.g:425:2: ( rule__TraceryProgram__StartingInstructionAssignment_2 )
             {
-             before(grammarAccess.getTraceryProgramAccess().getInstructionsAssignment_2()); 
-            // InternalTraceryLanguage.g:426:2: ( rule__TraceryProgram__InstructionsAssignment_2 )*
-            loop2:
-            do {
-                int alt2=2;
-                int LA2_0 = input.LA(1);
+             before(grammarAccess.getTraceryProgramAccess().getStartingInstructionAssignment_2()); 
+            // InternalTraceryLanguage.g:426:2: ( rule__TraceryProgram__StartingInstructionAssignment_2 )
+            // InternalTraceryLanguage.g:426:3: rule__TraceryProgram__StartingInstructionAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__TraceryProgram__StartingInstructionAssignment_2();
 
-                if ( (LA2_0==19) ) {
-                    alt2=1;
-                }
+            state._fsp--;
 
 
-                switch (alt2) {
-            	case 1 :
-            	    // InternalTraceryLanguage.g:426:3: rule__TraceryProgram__InstructionsAssignment_2
-            	    {
-            	    pushFollow(FOLLOW_4);
-            	    rule__TraceryProgram__InstructionsAssignment_2();
+            }
 
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop2;
-                }
-            } while (true);
-
-             after(grammarAccess.getTraceryProgramAccess().getInstructionsAssignment_2()); 
+             after(grammarAccess.getTraceryProgramAccess().getStartingInstructionAssignment_2()); 
 
             }
 
@@ -1249,7 +1231,7 @@ public class InternalTraceryLanguageParser extends AbstractInternalContentAssist
             // InternalTraceryLanguage.g:438:1: ( rule__TraceryProgram__Group__3__Impl rule__TraceryProgram__Group__4 )
             // InternalTraceryLanguage.g:439:2: rule__TraceryProgram__Group__3__Impl rule__TraceryProgram__Group__4
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_4);
             rule__TraceryProgram__Group__3__Impl();
 
             state._fsp--;
@@ -1278,31 +1260,49 @@ public class InternalTraceryLanguageParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__TraceryProgram__Group__3__Impl"
-    // InternalTraceryLanguage.g:446:1: rule__TraceryProgram__Group__3__Impl : ( ( rule__TraceryProgram__StartingInstructionAssignment_3 ) ) ;
+    // InternalTraceryLanguage.g:446:1: rule__TraceryProgram__Group__3__Impl : ( ( rule__TraceryProgram__InstructionsAssignment_3 )* ) ;
     public final void rule__TraceryProgram__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryLanguage.g:450:1: ( ( ( rule__TraceryProgram__StartingInstructionAssignment_3 ) ) )
-            // InternalTraceryLanguage.g:451:1: ( ( rule__TraceryProgram__StartingInstructionAssignment_3 ) )
+            // InternalTraceryLanguage.g:450:1: ( ( ( rule__TraceryProgram__InstructionsAssignment_3 )* ) )
+            // InternalTraceryLanguage.g:451:1: ( ( rule__TraceryProgram__InstructionsAssignment_3 )* )
             {
-            // InternalTraceryLanguage.g:451:1: ( ( rule__TraceryProgram__StartingInstructionAssignment_3 ) )
-            // InternalTraceryLanguage.g:452:2: ( rule__TraceryProgram__StartingInstructionAssignment_3 )
+            // InternalTraceryLanguage.g:451:1: ( ( rule__TraceryProgram__InstructionsAssignment_3 )* )
+            // InternalTraceryLanguage.g:452:2: ( rule__TraceryProgram__InstructionsAssignment_3 )*
             {
-             before(grammarAccess.getTraceryProgramAccess().getStartingInstructionAssignment_3()); 
-            // InternalTraceryLanguage.g:453:2: ( rule__TraceryProgram__StartingInstructionAssignment_3 )
-            // InternalTraceryLanguage.g:453:3: rule__TraceryProgram__StartingInstructionAssignment_3
-            {
-            pushFollow(FOLLOW_2);
-            rule__TraceryProgram__StartingInstructionAssignment_3();
+             before(grammarAccess.getTraceryProgramAccess().getInstructionsAssignment_3()); 
+            // InternalTraceryLanguage.g:453:2: ( rule__TraceryProgram__InstructionsAssignment_3 )*
+            loop2:
+            do {
+                int alt2=2;
+                int LA2_0 = input.LA(1);
 
-            state._fsp--;
+                if ( (LA2_0==19) ) {
+                    alt2=1;
+                }
 
 
-            }
+                switch (alt2) {
+            	case 1 :
+            	    // InternalTraceryLanguage.g:453:3: rule__TraceryProgram__InstructionsAssignment_3
+            	    {
+            	    pushFollow(FOLLOW_5);
+            	    rule__TraceryProgram__InstructionsAssignment_3();
 
-             after(grammarAccess.getTraceryProgramAccess().getStartingInstructionAssignment_3()); 
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop2;
+                }
+            } while (true);
+
+             after(grammarAccess.getTraceryProgramAccess().getInstructionsAssignment_3()); 
 
             }
 
@@ -3443,7 +3443,7 @@ public class InternalTraceryLanguageParser extends AbstractInternalContentAssist
             	case 1 :
             	    // InternalTraceryLanguage.g:1209:3: rule__StandardJSONStatement__StandardValuesAssignment_7
             	    {
-            	    pushFollow(FOLLOW_4);
+            	    pushFollow(FOLLOW_5);
             	    rule__StandardJSONStatement__StandardValuesAssignment_7();
 
             	    state._fsp--;
@@ -3926,7 +3926,7 @@ public class InternalTraceryLanguageParser extends AbstractInternalContentAssist
             	case 1 :
             	    // InternalTraceryLanguage.g:1371:3: rule__StartingJSONStatement__StandardValuesAssignment_4
             	    {
-            	    pushFollow(FOLLOW_4);
+            	    pushFollow(FOLLOW_5);
             	    rule__StartingJSONStatement__StandardValuesAssignment_4();
 
             	    state._fsp--;
@@ -4430,67 +4430,26 @@ public class InternalTraceryLanguageParser extends AbstractInternalContentAssist
     // $ANTLR end "rule__StandardValue__Group__4__Impl"
 
 
-    // $ANTLR start "rule__TraceryProgram__InstructionsAssignment_2"
-    // InternalTraceryLanguage.g:1541:1: rule__TraceryProgram__InstructionsAssignment_2 : ( ruleStandardJSONStatement ) ;
-    public final void rule__TraceryProgram__InstructionsAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__TraceryProgram__StartingInstructionAssignment_2"
+    // InternalTraceryLanguage.g:1541:1: rule__TraceryProgram__StartingInstructionAssignment_2 : ( ruleStartingJSONStatement ) ;
+    public final void rule__TraceryProgram__StartingInstructionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryLanguage.g:1545:1: ( ( ruleStandardJSONStatement ) )
-            // InternalTraceryLanguage.g:1546:2: ( ruleStandardJSONStatement )
+            // InternalTraceryLanguage.g:1545:1: ( ( ruleStartingJSONStatement ) )
+            // InternalTraceryLanguage.g:1546:2: ( ruleStartingJSONStatement )
             {
-            // InternalTraceryLanguage.g:1546:2: ( ruleStandardJSONStatement )
-            // InternalTraceryLanguage.g:1547:3: ruleStandardJSONStatement
+            // InternalTraceryLanguage.g:1546:2: ( ruleStartingJSONStatement )
+            // InternalTraceryLanguage.g:1547:3: ruleStartingJSONStatement
             {
-             before(grammarAccess.getTraceryProgramAccess().getInstructionsStandardJSONStatementParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_2);
-            ruleStandardJSONStatement();
-
-            state._fsp--;
-
-             after(grammarAccess.getTraceryProgramAccess().getInstructionsStandardJSONStatementParserRuleCall_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__TraceryProgram__InstructionsAssignment_2"
-
-
-    // $ANTLR start "rule__TraceryProgram__StartingInstructionAssignment_3"
-    // InternalTraceryLanguage.g:1556:1: rule__TraceryProgram__StartingInstructionAssignment_3 : ( ruleStartingJSONStatement ) ;
-    public final void rule__TraceryProgram__StartingInstructionAssignment_3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalTraceryLanguage.g:1560:1: ( ( ruleStartingJSONStatement ) )
-            // InternalTraceryLanguage.g:1561:2: ( ruleStartingJSONStatement )
-            {
-            // InternalTraceryLanguage.g:1561:2: ( ruleStartingJSONStatement )
-            // InternalTraceryLanguage.g:1562:3: ruleStartingJSONStatement
-            {
-             before(grammarAccess.getTraceryProgramAccess().getStartingInstructionStartingJSONStatementParserRuleCall_3_0()); 
+             before(grammarAccess.getTraceryProgramAccess().getStartingInstructionStartingJSONStatementParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
             ruleStartingJSONStatement();
 
             state._fsp--;
 
-             after(grammarAccess.getTraceryProgramAccess().getStartingInstructionStartingJSONStatementParserRuleCall_3_0()); 
+             after(grammarAccess.getTraceryProgramAccess().getStartingInstructionStartingJSONStatementParserRuleCall_2_0()); 
 
             }
 
@@ -4509,7 +4468,48 @@ public class InternalTraceryLanguageParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end "rule__TraceryProgram__StartingInstructionAssignment_3"
+    // $ANTLR end "rule__TraceryProgram__StartingInstructionAssignment_2"
+
+
+    // $ANTLR start "rule__TraceryProgram__InstructionsAssignment_3"
+    // InternalTraceryLanguage.g:1556:1: rule__TraceryProgram__InstructionsAssignment_3 : ( ruleStandardJSONStatement ) ;
+    public final void rule__TraceryProgram__InstructionsAssignment_3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalTraceryLanguage.g:1560:1: ( ( ruleStandardJSONStatement ) )
+            // InternalTraceryLanguage.g:1561:2: ( ruleStandardJSONStatement )
+            {
+            // InternalTraceryLanguage.g:1561:2: ( ruleStandardJSONStatement )
+            // InternalTraceryLanguage.g:1562:3: ruleStandardJSONStatement
+            {
+             before(grammarAccess.getTraceryProgramAccess().getInstructionsStandardJSONStatementParserRuleCall_3_0()); 
+            pushFollow(FOLLOW_2);
+            ruleStandardJSONStatement();
+
+            state._fsp--;
+
+             after(grammarAccess.getTraceryProgramAccess().getInstructionsStandardJSONStatementParserRuleCall_3_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__TraceryProgram__InstructionsAssignment_3"
 
 
     // $ANTLR start "rule__InitialJSONExpression__VarAssignment"
@@ -4883,9 +4883,9 @@ public class InternalTraceryLanguageParser extends AbstractInternalContentAssist
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000880000L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000080002L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000081000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000080002L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000006020L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000004022L});

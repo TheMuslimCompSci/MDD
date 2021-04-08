@@ -90,28 +90,9 @@ ruleTraceryProgram returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getTraceryProgramAccess().getInstructionsStandardJSONStatementParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getTraceryProgramAccess().getStartingInstructionStartingJSONStatementParserRuleCall_2_0());
 				}
-				lv_instructions_2_0=ruleStandardJSONStatement
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getTraceryProgramRule());
-					}
-					add(
-						$current,
-						"instructions",
-						lv_instructions_2_0,
-						"uk.ac.kcl.inf.languages.tracery.TraceryLanguage.StandardJSONStatement");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getTraceryProgramAccess().getStartingInstructionStartingJSONStatementParserRuleCall_3_0());
-				}
-				lv_startingInstruction_3_0=ruleStartingJSONStatement
+				lv_startingInstruction_2_0=ruleStartingJSONStatement
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getTraceryProgramRule());
@@ -119,12 +100,31 @@ ruleTraceryProgram returns [EObject current=null]
 					set(
 						$current,
 						"startingInstruction",
-						lv_startingInstruction_3_0,
+						lv_startingInstruction_2_0,
 						"uk.ac.kcl.inf.languages.tracery.TraceryLanguage.StartingJSONStatement");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTraceryProgramAccess().getInstructionsStandardJSONStatementParserRuleCall_3_0());
+				}
+				lv_instructions_3_0=ruleStandardJSONStatement
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTraceryProgramRule());
+					}
+					add(
+						$current,
+						"instructions",
+						lv_instructions_3_0,
+						"uk.ac.kcl.inf.languages.tracery.TraceryLanguage.StandardJSONStatement");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
 		otherlv_4='}'
 		{
 			newLeafNode(otherlv_4, grammarAccess.getTraceryProgramAccess().getRightCurlyBracketKeyword_4());

@@ -422,9 +422,9 @@ rule__TraceryProgram__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getTraceryProgramAccess().getInstructionsAssignment_2()); }
-	(rule__TraceryProgram__InstructionsAssignment_2)*
-	{ after(grammarAccess.getTraceryProgramAccess().getInstructionsAssignment_2()); }
+	{ before(grammarAccess.getTraceryProgramAccess().getStartingInstructionAssignment_2()); }
+	(rule__TraceryProgram__StartingInstructionAssignment_2)
+	{ after(grammarAccess.getTraceryProgramAccess().getStartingInstructionAssignment_2()); }
 )
 ;
 finally {
@@ -449,9 +449,9 @@ rule__TraceryProgram__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getTraceryProgramAccess().getStartingInstructionAssignment_3()); }
-	(rule__TraceryProgram__StartingInstructionAssignment_3)
-	{ after(grammarAccess.getTraceryProgramAccess().getStartingInstructionAssignment_3()); }
+	{ before(grammarAccess.getTraceryProgramAccess().getInstructionsAssignment_3()); }
+	(rule__TraceryProgram__InstructionsAssignment_3)*
+	{ after(grammarAccess.getTraceryProgramAccess().getInstructionsAssignment_3()); }
 )
 ;
 finally {
@@ -1538,30 +1538,30 @@ finally {
 }
 
 
-rule__TraceryProgram__InstructionsAssignment_2
+rule__TraceryProgram__StartingInstructionAssignment_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getTraceryProgramAccess().getInstructionsStandardJSONStatementParserRuleCall_2_0()); }
-		ruleStandardJSONStatement
-		{ after(grammarAccess.getTraceryProgramAccess().getInstructionsStandardJSONStatementParserRuleCall_2_0()); }
+		{ before(grammarAccess.getTraceryProgramAccess().getStartingInstructionStartingJSONStatementParserRuleCall_2_0()); }
+		ruleStartingJSONStatement
+		{ after(grammarAccess.getTraceryProgramAccess().getStartingInstructionStartingJSONStatementParserRuleCall_2_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__TraceryProgram__StartingInstructionAssignment_3
+rule__TraceryProgram__InstructionsAssignment_3
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getTraceryProgramAccess().getStartingInstructionStartingJSONStatementParserRuleCall_3_0()); }
-		ruleStartingJSONStatement
-		{ after(grammarAccess.getTraceryProgramAccess().getStartingInstructionStartingJSONStatementParserRuleCall_3_0()); }
+		{ before(grammarAccess.getTraceryProgramAccess().getInstructionsStandardJSONStatementParserRuleCall_3_0()); }
+		ruleStandardJSONStatement
+		{ after(grammarAccess.getTraceryProgramAccess().getInstructionsStandardJSONStatementParserRuleCall_3_0()); }
 	)
 ;
 finally {

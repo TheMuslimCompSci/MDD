@@ -3,10 +3,10 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="traceryLanguage" nsURI="http://www.ac.uk/kcl/inf/languages/tracery/TraceryLanguage"
     nsPrefix="traceryLanguage">
   <eClassifiers xsi:type="ecore:EClass" name="TraceryProgram">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1"
-        eType="#//StandardJSONStatement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="startingInstruction" eType="#//StartingJSONStatement"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1"
+        eType="#//StandardJSONStatement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InitialJSONExpression" eSuperTypes="#//StandardJSONStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//VariableDeclaration"/>

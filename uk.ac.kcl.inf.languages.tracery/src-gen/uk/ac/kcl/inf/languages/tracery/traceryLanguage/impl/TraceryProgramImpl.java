@@ -32,24 +32,14 @@ import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryProgramImpl#getInstructions <em>Instructions</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryProgramImpl#getStartingInstruction <em>Starting Instruction</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.TraceryProgramImpl#getInstructions <em>Instructions</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements TraceryProgram
 {
-  /**
-   * The cached value of the '{@link #getInstructions() <em>Instructions</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getInstructions()
-   * @generated
-   * @ordered
-   */
-  protected EList<StandardJSONStatement> instructions;
-
   /**
    * The cached value of the '{@link #getStartingInstruction() <em>Starting Instruction</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -59,6 +49,16 @@ public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements 
    * @ordered
    */
   protected StartingJSONStatement startingInstruction;
+
+  /**
+   * The cached value of the '{@link #getInstructions() <em>Instructions</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getInstructions()
+   * @generated
+   * @ordered
+   */
+  protected EList<StandardJSONStatement> instructions;
 
   /**
    * <!-- begin-user-doc -->
@@ -79,21 +79,6 @@ public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements 
   protected EClass eStaticClass()
   {
     return TraceryLanguagePackage.Literals.TRACERY_PROGRAM;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<StandardJSONStatement> getInstructions()
-  {
-    if (instructions == null)
-    {
-      instructions = new EObjectContainmentEList<StandardJSONStatement>(StandardJSONStatement.class, this, TraceryLanguagePackage.TRACERY_PROGRAM__INSTRUCTIONS);
-    }
-    return instructions;
   }
 
   /**
@@ -152,14 +137,29 @@ public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
+  public EList<StandardJSONStatement> getInstructions()
+  {
+    if (instructions == null)
+    {
+      instructions = new EObjectContainmentEList<StandardJSONStatement>(StandardJSONStatement.class, this, TraceryLanguagePackage.TRACERY_PROGRAM__INSTRUCTIONS);
+    }
+    return instructions;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.TRACERY_PROGRAM__INSTRUCTIONS:
-        return ((InternalEList<?>)getInstructions()).basicRemove(otherEnd, msgs);
       case TraceryLanguagePackage.TRACERY_PROGRAM__STARTING_INSTRUCTION:
         return basicSetStartingInstruction(null, msgs);
+      case TraceryLanguagePackage.TRACERY_PROGRAM__INSTRUCTIONS:
+        return ((InternalEList<?>)getInstructions()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -174,10 +174,10 @@ public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.TRACERY_PROGRAM__INSTRUCTIONS:
-        return getInstructions();
       case TraceryLanguagePackage.TRACERY_PROGRAM__STARTING_INSTRUCTION:
         return getStartingInstruction();
+      case TraceryLanguagePackage.TRACERY_PROGRAM__INSTRUCTIONS:
+        return getInstructions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -193,12 +193,12 @@ public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
+      case TraceryLanguagePackage.TRACERY_PROGRAM__STARTING_INSTRUCTION:
+        setStartingInstruction((StartingJSONStatement)newValue);
+        return;
       case TraceryLanguagePackage.TRACERY_PROGRAM__INSTRUCTIONS:
         getInstructions().clear();
         getInstructions().addAll((Collection<? extends StandardJSONStatement>)newValue);
-        return;
-      case TraceryLanguagePackage.TRACERY_PROGRAM__STARTING_INSTRUCTION:
-        setStartingInstruction((StartingJSONStatement)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -214,11 +214,11 @@ public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.TRACERY_PROGRAM__INSTRUCTIONS:
-        getInstructions().clear();
-        return;
       case TraceryLanguagePackage.TRACERY_PROGRAM__STARTING_INSTRUCTION:
         setStartingInstruction((StartingJSONStatement)null);
+        return;
+      case TraceryLanguagePackage.TRACERY_PROGRAM__INSTRUCTIONS:
+        getInstructions().clear();
         return;
     }
     super.eUnset(featureID);
@@ -234,10 +234,10 @@ public class TraceryProgramImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.TRACERY_PROGRAM__INSTRUCTIONS:
-        return instructions != null && !instructions.isEmpty();
       case TraceryLanguagePackage.TRACERY_PROGRAM__STARTING_INSTRUCTION:
         return startingInstruction != null;
+      case TraceryLanguagePackage.TRACERY_PROGRAM__INSTRUCTIONS:
+        return instructions != null && !instructions.isEmpty();
     }
     return super.eIsSet(featureID);
   }

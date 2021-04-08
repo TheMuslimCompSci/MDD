@@ -42,8 +42,8 @@ public class TraceryLanguageParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getStandardJSONStatementAccess().getGroup(), "rule__StandardJSONStatement__Group__0");
 			builder.put(grammarAccess.getStartingJSONStatementAccess().getGroup(), "rule__StartingJSONStatement__Group__0");
 			builder.put(grammarAccess.getStandardValueAccess().getGroup(), "rule__StandardValue__Group__0");
-			builder.put(grammarAccess.getTraceryProgramAccess().getInstructionsAssignment_2(), "rule__TraceryProgram__InstructionsAssignment_2");
-			builder.put(grammarAccess.getTraceryProgramAccess().getStartingInstructionAssignment_3(), "rule__TraceryProgram__StartingInstructionAssignment_3");
+			builder.put(grammarAccess.getTraceryProgramAccess().getStartingInstructionAssignment_2(), "rule__TraceryProgram__StartingInstructionAssignment_2");
+			builder.put(grammarAccess.getTraceryProgramAccess().getInstructionsAssignment_3(), "rule__TraceryProgram__InstructionsAssignment_3");
 			builder.put(grammarAccess.getInitialJSONExpressionAccess().getVarAssignment(), "rule__InitialJSONExpression__VarAssignment");
 			builder.put(grammarAccess.getInitialValueAccess().getValueAssignment_2(), "rule__InitialValue__ValueAssignment_2");
 			builder.put(grammarAccess.getInternalInstructionAccess().getValueAssignment_0(), "rule__InternalInstruction__ValueAssignment_0");
