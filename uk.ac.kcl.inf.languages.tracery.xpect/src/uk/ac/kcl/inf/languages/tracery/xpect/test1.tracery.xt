@@ -1,5 +1,6 @@
 /* XPECT_SETUP uk.ac.kcl.inf.languages.tracery.xpect.XPectTests END_SETUP */
 {
+	// XPECT scope at hello --> hello, myTest, ...
 	&origin&:[&"test" #myTest#&],
 	&hello&:[&"blue"&],
 	&myTest&:[&"hello"&, &#hello#&]
