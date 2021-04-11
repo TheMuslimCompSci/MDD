@@ -3,6 +3,17 @@
  */
 package uk.ac.kcl.inf.languages.tracery.scoping
 
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.EReference
+import org.eclipse.xtext.scoping.IScope
+import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONExpression
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.VariableDeclaration
+
+import static org.eclipse.xtext.scoping.Scopes.*
+
+import static extension org.eclipse.xtext.EcoreUtil2.*
 
 /**
  * This class contains custom scoping description.
@@ -10,6 +21,23 @@ package uk.ac.kcl.inf.languages.tracery.scoping
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#scoping
  * on how and when to use it.
  */
-class TraceryLanguageScopeProvider extends AbstractTraceryLanguageScopeProvider {
+class TraceryLanguageScopeProvider extends AbstractDeclarativeScopeProvider {
 
+	def IScope scope_InitialJSONExpression_var (InitialJSONExpression context, EReference ref) {
+		val containingTraceryProgram = context.getContainerOfType(TraceryProgram)
+		
+		if (containingTraceryProgram !== null) {
+			containingTraceryProgram.visibleVariablesScope
+		} else {
+			val containingProgram = context.getContainerOfType(TraceryProgram)
+			
+			scopeFor(containingProgram.instructions.filter(VariableDeclaration))
+		}
+	}
+	
+	def IScope visibleVariablesScope(EObject context) {
+		if (context instanceof TraceryProgram) {
+			scopeFor(context.instructions.filter(VariableDeclaration))
+		}
+	}
 }
