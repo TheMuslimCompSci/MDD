@@ -14,7 +14,6 @@ import uk.ac.kcl.inf.languages.tracery.ui.AbstractTraceryLanguageUiModule;
 @SuppressWarnings("all")
 public class TraceryLanguageUiModule extends AbstractTraceryLanguageUiModule {
   public TraceryLanguageUiModule(final AbstractUIPlugin plugin) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe type TraceryLanguageUiModule is already defined in TraceryLanguageUiModule.java.");
+    super(plugin);
   }
 }

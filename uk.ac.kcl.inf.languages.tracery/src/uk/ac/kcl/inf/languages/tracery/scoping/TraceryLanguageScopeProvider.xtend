@@ -3,6 +3,19 @@
  */
 package uk.ac.kcl.inf.languages.tracery.scoping
 
+/**
+ * This class contains custom scoping description.
+ * 
+ * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#scoping
+ * on how and when to use it.
+ */
+class TraceryLanguageScopeProvider extends AbstractTraceryLanguageScopeProvider {
+		 
+}
+
+/*
+package uk.ac.kcl.inf.languages.tracery.scoping
+
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EReference
 import org.eclipse.xtext.scoping.IScope
@@ -15,12 +28,6 @@ import static org.eclipse.xtext.scoping.Scopes.*
 
 import static extension org.eclipse.xtext.EcoreUtil2.*
 
-/**
- * This class contains custom scoping description.
- * 
- * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#scoping
- * on how and when to use it.
- */
 class TraceryLanguageScopeProvider extends AbstractDeclarativeScopeProvider {
 
 	def IScope scope_InitialJSONExpression_var (InitialJSONExpression context, EReference ref) {
@@ -40,4 +47,5 @@ class TraceryLanguageScopeProvider extends AbstractDeclarativeScopeProvider {
 			scopeFor(context.instructions.filter(VariableDeclaration))
 		}
 	}
-}
+} 
+*/
