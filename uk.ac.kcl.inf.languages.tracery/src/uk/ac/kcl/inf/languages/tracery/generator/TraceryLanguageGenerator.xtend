@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram
 
 /**
  * Generates code from your model files on save.
@@ -14,12 +15,37 @@ import org.eclipse.xtext.generator.IGeneratorContext
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class TraceryLanguageGenerator extends AbstractGenerator {
+	
+	def generate(TraceryProgram program) {
+		val chars = program.toString.toCharArray
+	
+	'''
+		«for (char character : chars) 
+		{
+			if (character.equals('"')) 
+			{
+				
+			}
+			else if(character.equals('&')) 
+			{
+				
+			}
+			else 
+			{
+				
+			}
+		}»
+	'''
+	}	
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
+		val model = resource.contents.head as TraceryProgram
+		
+		fsa.generateFile(deriveTargetFileNameFor(model, resource), model.generate)
 	}
+	
+	def deriveTargetFileNameFor(TraceryProgram program, Resource resource) {
+		resource.URI.appendFileExtension('txt').lastSegment
+	}
+	
 }
