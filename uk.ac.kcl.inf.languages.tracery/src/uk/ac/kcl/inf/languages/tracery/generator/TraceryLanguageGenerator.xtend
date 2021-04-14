@@ -3,10 +3,18 @@
  */
 package uk.ac.kcl.inf.languages.tracery.generator
 
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.LastJSONStatement
 import org.eclipse.emf.ecore.resource.Resource
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.VariableDeclarationImpl
 import org.eclipse.xtext.generator.AbstractGenerator
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.StringDeclarationImpl
 import org.eclipse.xtext.generator.IFileSystemAccess2
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.StandardVal
 import org.eclipse.xtext.generator.IGeneratorContext
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.InitialValImpl
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.FirstJSONStatements
+import java.util.ArrayList
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.FirstJSONStatementsImpl
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram
 
 /**
@@ -17,25 +25,75 @@ import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram
 class TraceryLanguageGenerator extends AbstractGenerator {
 	
 	def generate(TraceryProgram program) {
-		val chars = program.toString.toCharArray
-	
+		val instructions = program.instructions.head.eContents	
+
 	'''
-		«for (char character : chars) 
 		{
-			if (character.equals('"')) 
-			{
-				
-			}
-			else if(character.equals('&')) 
-			{
-				
-			}
-			else 
-			{
-				
-			}
-		}»
+		«FOR instruction : instructions»
+			«val sections = new ArrayList()»
+			«IF FirstJSONStatementsImpl == instruction.class»
+				«val JSONStatement = instruction as FirstJSONStatements»
+				«val value = JSONStatement.value as InitialValImpl»
+				«val internalInstruction = value.valInternalInstruction»
+				«FOR sectionsArray : internalInstruction»
+					«IF StringDeclarationImpl == sectionsArray.class»
+						«val declareString = sectionsArray as StringDeclarationImpl»
+						«val finish = sections.add('"' + declareString.value + '"')»
+					«ELSE»
+						«val variableDeclaration = sectionsArray as VariableDeclarationImpl»
+						«val variable = variableDeclaration.variable as FirstJSONStatements»
+						«val finish = sections.add(' "#' + variable.name + '#"')»
+					«ENDIF»
+				«ENDFOR»
+				«val externalInstruction = value.vals»
+				«FOR StandardVal standardValue : externalInstruction»
+					«val internalStandard = standardValue.valInternalInstruction»
+					«FOR sectionsArray : internalStandard»
+						«IF StringDeclarationImpl == sectionsArray.class»
+							«val declareString = sectionsArray as StringDeclarationImpl»
+							«val finish = sections.add('"' + declareString.value + '"')»
+						«ELSE»	
+							«val variableDeclaration = sectionsArray as VariableDeclarationImpl»
+							«val variable = variableDeclaration.variable as FirstJSONStatements»
+							«val finish = sections.add(' "#' + variable.name + '#"')»
+						«ENDIF»
+					«ENDFOR»
+				«ENDFOR»		
+				«'\t' + '"' + JSONStatement.getName() + '"' + ": [" + sections.join(",") + "],"»
+			«ELSE»
+				«val JSONStatement = instruction as LastJSONStatement»
+				«val value = JSONStatement.value as InitialValImpl»
+				«val internalInstruction = value.valInternalInstruction»
+				«FOR sectionsArray : internalInstruction»
+					«IF StringDeclarationImpl == sectionsArray.class»
+						«val declareString = sectionsArray as StringDeclarationImpl»
+						«val finish = sections.add('"' + declareString.value + '"')»
+					«ELSE»	
+						«val variableDeclaration = sectionsArray as VariableDeclarationImpl»
+						«val variable = variableDeclaration.variable as FirstJSONStatements»
+						«val finish = sections.add(' "#' + variable.name + '#"')»
+					«ENDIF»
+				«ENDFOR»
+				«val externalInstruction = value.vals»
+				«FOR StandardVal standardValue : externalInstruction»
+					«val internalStandard = standardValue.valInternalInstruction»
+					«FOR sectionsArray : internalStandard»
+						«IF StringDeclarationImpl == sectionsArray.class»
+							«val declareString = sectionsArray as StringDeclarationImpl»
+							«val finish = sections.add('"' + declareString.value + '"')»
+						«ELSE»	
+							«val variableDeclaration = sectionsArray as VariableDeclarationImpl»
+							«val variable = variableDeclaration.variable as FirstJSONStatements»
+							«val finish = sections.add(' "#' + variable.name + '#"')»
+						«ENDIF»
+					«ENDFOR»
+				«ENDFOR»
+				«'\t' + '"' + "origin" + '"' + ": [" + sections.join(",")  + "]"»
+			«ENDIF»
+		«ENDFOR»
+		}
 	'''
+
 	}	
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
