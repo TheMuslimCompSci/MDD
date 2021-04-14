@@ -1,7 +1,7 @@
 {
-	"hello": ["yellow"],
-	"myFriend": ["hello", "#hello#"],
-	"bob": ["Hello my name is betty"],
-	"betty": ["idk","btw","cya","bye"],
-	"origin": ["Test", "#myFriend#"]
+	"hi": ["blue"],
+	"myTest": ["hi", "#hi#"],
+	"fareed": ["Hi my name is parth"],
+	"parth": ["haha","lol","gg","wp"],
+	"origin": ["Test", "#myTest#"]
 }

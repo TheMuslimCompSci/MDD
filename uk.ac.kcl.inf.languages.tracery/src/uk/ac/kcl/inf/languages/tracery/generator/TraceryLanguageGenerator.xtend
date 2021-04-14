@@ -36,26 +36,26 @@ class TraceryLanguageGenerator extends AbstractGenerator {
 				«val value = JSONStatement.value as InitialValImpl»
 				«val internalInstruction = value.valInternalInstruction»
 				«FOR sectionsArray : internalInstruction»
-					«IF StringDeclarationImpl == sectionsArray.class»
-						«val declareString = sectionsArray as StringDeclarationImpl»
-						«val finish = sections.add('"' + declareString.value + '"')»
-					«ELSE»
+					«IF StringDeclarationImpl != sectionsArray.class»
 						«val variableDeclaration = sectionsArray as VariableDeclarationImpl»
 						«val variable = variableDeclaration.variable as FirstJSONStatements»
-						«val finish = sections.add(' "#' + variable.name + '#"')»
+						«val finish = sections.add(' "#' + variable.name + '#"')»						
+					«ELSE»
+						«val declareString = sectionsArray as StringDeclarationImpl»
+						«val finish = sections.add('"' + declareString.value + '"')»
 					«ENDIF»
 				«ENDFOR»
 				«val externalInstruction = value.vals»
 				«FOR StandardVal standardValue : externalInstruction»
 					«val internalStandard = standardValue.valInternalInstruction»
 					«FOR sectionsArray : internalStandard»
-						«IF StringDeclarationImpl == sectionsArray.class»
-							«val declareString = sectionsArray as StringDeclarationImpl»
-							«val finish = sections.add('"' + declareString.value + '"')»
-						«ELSE»	
+						«IF StringDeclarationImpl != sectionsArray.class»
 							«val variableDeclaration = sectionsArray as VariableDeclarationImpl»
 							«val variable = variableDeclaration.variable as FirstJSONStatements»
-							«val finish = sections.add(' "#' + variable.name + '#"')»
+							«val finish = sections.add(' "#' + variable.name + '#"')»							
+						«ELSE»	
+							«val declareString = sectionsArray as StringDeclarationImpl»
+							«val finish = sections.add('"' + declareString.value + '"')»
 						«ENDIF»
 					«ENDFOR»
 				«ENDFOR»		
@@ -65,26 +65,26 @@ class TraceryLanguageGenerator extends AbstractGenerator {
 				«val value = JSONStatement.value as InitialValImpl»
 				«val internalInstruction = value.valInternalInstruction»
 				«FOR sectionsArray : internalInstruction»
-					«IF StringDeclarationImpl == sectionsArray.class»
-						«val declareString = sectionsArray as StringDeclarationImpl»
-						«val finish = sections.add('"' + declareString.value + '"')»
-					«ELSE»	
+					«IF StringDeclarationImpl != sectionsArray.class»
 						«val variableDeclaration = sectionsArray as VariableDeclarationImpl»
 						«val variable = variableDeclaration.variable as FirstJSONStatements»
-						«val finish = sections.add(' "#' + variable.name + '#"')»
+						«val finish = sections.add(' "#' + variable.name + '#"')»					
+					«ELSE»	
+						«val declareString = sectionsArray as StringDeclarationImpl»
+						«val finish = sections.add('"' + declareString.value + '"')»
 					«ENDIF»
 				«ENDFOR»
 				«val externalInstruction = value.vals»
 				«FOR StandardVal standardValue : externalInstruction»
 					«val internalStandard = standardValue.valInternalInstruction»
 					«FOR sectionsArray : internalStandard»
-						«IF StringDeclarationImpl == sectionsArray.class»
-							«val declareString = sectionsArray as StringDeclarationImpl»
-							«val finish = sections.add('"' + declareString.value + '"')»
-						«ELSE»	
+						«IF StringDeclarationImpl != sectionsArray.class»
 							«val variableDeclaration = sectionsArray as VariableDeclarationImpl»
 							«val variable = variableDeclaration.variable as FirstJSONStatements»
-							«val finish = sections.add(' "#' + variable.name + '#"')»
+							«val finish = sections.add(' "#' + variable.name + '#"')»						
+						«ELSE»	
+							«val declareString = sectionsArray as StringDeclarationImpl»
+							«val finish = sections.add('"' + declareString.value + '"')»
 						«ENDIF»
 					«ENDFOR»
 				«ENDFOR»

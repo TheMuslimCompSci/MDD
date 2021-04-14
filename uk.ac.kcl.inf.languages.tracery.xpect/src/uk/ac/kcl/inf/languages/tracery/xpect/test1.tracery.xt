@@ -1,9 +1,9 @@
 /* XPECT_SETUP uk.ac.kcl.inf.languages.tracery.xpect.XPectTests END_SETUP */
 {
-	// XPECT scope at hello --> hello, myTest, ...
-	&hello&:[&"yellow"&],
-	&myFriend&:[&"hello"&, &#hello#&],
-	&bob&:[&"Hello my name is betty"&],
-	&betty&:[&"idk"&, &"btw"&, &"cya"&, &"bye"&],
-	&origin&:[&"Test" #myFriend#&]
+	// XPECT scope at hi --> hi, myTest, ...
+	&hi&:[&"blue"&],
+	&myTest&:[&"hi"&, &#hi#&],
+	&fareed&:[&"Hi my name is parth"&],
+	&parth&:[&"haha"&, &"lol"&, &"gg"&, &"wp"&],
+	&origin&:[&"Test" #myTest#&]
 }
