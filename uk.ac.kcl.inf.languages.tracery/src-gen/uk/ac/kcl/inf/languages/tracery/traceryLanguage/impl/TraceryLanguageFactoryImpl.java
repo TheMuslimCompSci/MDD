@@ -66,12 +66,16 @@ public class TraceryLanguageFactoryImpl extends EFactoryImpl implements TraceryL
     switch (eClass.getClassifierID())
     {
       case TraceryLanguagePackage.TRACERY_PROGRAM: return createTraceryProgram();
-      case TraceryLanguagePackage.INITIAL_JSON_EXPRESSION: return createInitialJSONExpression();
-      case TraceryLanguagePackage.INITIAL_VALUE: return createinitialValue();
-      case TraceryLanguagePackage.INTERNAL_INSTRUCTION: return createInternalInstruction();
-      case TraceryLanguagePackage.STANDARD_JSON_STATEMENT: return createStandardJSONStatement();
-      case TraceryLanguagePackage.STARTING_JSON_STATEMENT: return createStartingJSONStatement();
-      case TraceryLanguagePackage.STANDARD_VALUE: return createstandardValue();
+      case TraceryLanguagePackage.FIRST_JSON_STATEMENTS: return createFirstJSONStatements();
+      case TraceryLanguagePackage.FIRST_JSON_FINISH: return createFirstJSONFinish();
+      case TraceryLanguagePackage.INITIAL_VAL: return createInitialVal();
+      case TraceryLanguagePackage.INSTRUCTION: return createInstruction();
+      case TraceryLanguagePackage.INTERNAL_INSTRUCTIONS: return createInternalInstructions();
+      case TraceryLanguagePackage.INTERNAL_VALS: return createInternalVals();
+      case TraceryLanguagePackage.LAST_JSON_FINISH: return createLastJSONFinish();
+      case TraceryLanguagePackage.LAST_JSON_STATEMENT: return createLastJSONStatement();
+      case TraceryLanguagePackage.STANDARD_VAL: return createStandardVal();
+      case TraceryLanguagePackage.STRING_DECLARATION: return createStringDeclaration();
       case TraceryLanguagePackage.VARIABLE_DECLARATION: return createVariableDeclaration();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -96,10 +100,10 @@ public class TraceryLanguageFactoryImpl extends EFactoryImpl implements TraceryL
    * @generated
    */
   @Override
-  public InitialJSONExpression createInitialJSONExpression()
+  public FirstJSONStatements createFirstJSONStatements()
   {
-    InitialJSONExpressionImpl initialJSONExpression = new InitialJSONExpressionImpl();
-    return initialJSONExpression;
+    FirstJSONStatementsImpl firstJSONStatements = new FirstJSONStatementsImpl();
+    return firstJSONStatements;
   }
 
   /**
@@ -108,10 +112,10 @@ public class TraceryLanguageFactoryImpl extends EFactoryImpl implements TraceryL
    * @generated
    */
   @Override
-  public initialValue createinitialValue()
+  public FirstJSONFinish createFirstJSONFinish()
   {
-    initialValueImpl initialValue = new initialValueImpl();
-    return initialValue;
+    FirstJSONFinishImpl firstJSONFinish = new FirstJSONFinishImpl();
+    return firstJSONFinish;
   }
 
   /**
@@ -120,10 +124,10 @@ public class TraceryLanguageFactoryImpl extends EFactoryImpl implements TraceryL
    * @generated
    */
   @Override
-  public InternalInstruction createInternalInstruction()
+  public InitialVal createInitialVal()
   {
-    InternalInstructionImpl internalInstruction = new InternalInstructionImpl();
-    return internalInstruction;
+    InitialValImpl initialVal = new InitialValImpl();
+    return initialVal;
   }
 
   /**
@@ -132,10 +136,10 @@ public class TraceryLanguageFactoryImpl extends EFactoryImpl implements TraceryL
    * @generated
    */
   @Override
-  public StandardJSONStatement createStandardJSONStatement()
+  public Instruction createInstruction()
   {
-    StandardJSONStatementImpl standardJSONStatement = new StandardJSONStatementImpl();
-    return standardJSONStatement;
+    InstructionImpl instruction = new InstructionImpl();
+    return instruction;
   }
 
   /**
@@ -144,10 +148,10 @@ public class TraceryLanguageFactoryImpl extends EFactoryImpl implements TraceryL
    * @generated
    */
   @Override
-  public StartingJSONStatement createStartingJSONStatement()
+  public InternalInstructions createInternalInstructions()
   {
-    StartingJSONStatementImpl startingJSONStatement = new StartingJSONStatementImpl();
-    return startingJSONStatement;
+    InternalInstructionsImpl internalInstructions = new InternalInstructionsImpl();
+    return internalInstructions;
   }
 
   /**
@@ -156,10 +160,58 @@ public class TraceryLanguageFactoryImpl extends EFactoryImpl implements TraceryL
    * @generated
    */
   @Override
-  public standardValue createstandardValue()
+  public InternalVals createInternalVals()
   {
-    standardValueImpl standardValue = new standardValueImpl();
-    return standardValue;
+    InternalValsImpl internalVals = new InternalValsImpl();
+    return internalVals;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public LastJSONFinish createLastJSONFinish()
+  {
+    LastJSONFinishImpl lastJSONFinish = new LastJSONFinishImpl();
+    return lastJSONFinish;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public LastJSONStatement createLastJSONStatement()
+  {
+    LastJSONStatementImpl lastJSONStatement = new LastJSONStatementImpl();
+    return lastJSONStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public StandardVal createStandardVal()
+  {
+    StandardValImpl standardVal = new StandardValImpl();
+    return standardVal;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public StringDeclaration createStringDeclaration()
+  {
+    StringDeclarationImpl stringDeclaration = new StringDeclarationImpl();
+    return stringDeclaration;
   }
 
   /**

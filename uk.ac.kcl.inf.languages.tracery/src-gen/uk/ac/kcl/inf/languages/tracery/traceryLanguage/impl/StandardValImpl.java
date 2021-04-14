@@ -17,41 +17,41 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InternalInstruction;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InternalInstructions;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.StandardVal;
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage;
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.standardValue;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>standard Value</b></em>'.
+ * An implementation of the model object '<em><b>Standard Val</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.standardValueImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.StandardValImpl#getValInternalInstruction <em>Val Internal Instruction</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class standardValueImpl extends MinimalEObjectImpl.Container implements standardValue
+public class StandardValImpl extends MinimalEObjectImpl.Container implements StandardVal
 {
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference list.
+   * The cached value of the '{@link #getValInternalInstruction() <em>Val Internal Instruction</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getValInternalInstruction()
    * @generated
    * @ordered
    */
-  protected EList<InternalInstruction> value;
+  protected EList<InternalInstructions> valInternalInstruction;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected standardValueImpl()
+  protected StandardValImpl()
   {
     super();
   }
@@ -64,7 +64,7 @@ public class standardValueImpl extends MinimalEObjectImpl.Container implements s
   @Override
   protected EClass eStaticClass()
   {
-    return TraceryLanguagePackage.Literals.STANDARD_VALUE;
+    return TraceryLanguagePackage.Literals.STANDARD_VAL;
   }
 
   /**
@@ -73,13 +73,13 @@ public class standardValueImpl extends MinimalEObjectImpl.Container implements s
    * @generated
    */
   @Override
-  public EList<InternalInstruction> getValue()
+  public EList<InternalInstructions> getValInternalInstruction()
   {
-    if (value == null)
+    if (valInternalInstruction == null)
     {
-      value = new EObjectContainmentEList<InternalInstruction>(InternalInstruction.class, this, TraceryLanguagePackage.STANDARD_VALUE__VALUE);
+      valInternalInstruction = new EObjectContainmentEList<InternalInstructions>(InternalInstructions.class, this, TraceryLanguagePackage.STANDARD_VAL__VAL_INTERNAL_INSTRUCTION);
     }
-    return value;
+    return valInternalInstruction;
   }
 
   /**
@@ -92,8 +92,8 @@ public class standardValueImpl extends MinimalEObjectImpl.Container implements s
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.STANDARD_VALUE__VALUE:
-        return ((InternalEList<?>)getValue()).basicRemove(otherEnd, msgs);
+      case TraceryLanguagePackage.STANDARD_VAL__VAL_INTERNAL_INSTRUCTION:
+        return ((InternalEList<?>)getValInternalInstruction()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -108,8 +108,8 @@ public class standardValueImpl extends MinimalEObjectImpl.Container implements s
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.STANDARD_VALUE__VALUE:
-        return getValue();
+      case TraceryLanguagePackage.STANDARD_VAL__VAL_INTERNAL_INSTRUCTION:
+        return getValInternalInstruction();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -125,9 +125,9 @@ public class standardValueImpl extends MinimalEObjectImpl.Container implements s
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.STANDARD_VALUE__VALUE:
-        getValue().clear();
-        getValue().addAll((Collection<? extends InternalInstruction>)newValue);
+      case TraceryLanguagePackage.STANDARD_VAL__VAL_INTERNAL_INSTRUCTION:
+        getValInternalInstruction().clear();
+        getValInternalInstruction().addAll((Collection<? extends InternalInstructions>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,8 +143,8 @@ public class standardValueImpl extends MinimalEObjectImpl.Container implements s
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.STANDARD_VALUE__VALUE:
-        getValue().clear();
+      case TraceryLanguagePackage.STANDARD_VAL__VAL_INTERNAL_INSTRUCTION:
+        getValInternalInstruction().clear();
         return;
     }
     super.eUnset(featureID);
@@ -160,10 +160,10 @@ public class standardValueImpl extends MinimalEObjectImpl.Container implements s
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.STANDARD_VALUE__VALUE:
-        return value != null && !value.isEmpty();
+      case TraceryLanguagePackage.STANDARD_VAL__VAL_INTERNAL_INSTRUCTION:
+        return valInternalInstruction != null && !valInternalInstruction.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //standardValueImpl
+} //StandardValImpl

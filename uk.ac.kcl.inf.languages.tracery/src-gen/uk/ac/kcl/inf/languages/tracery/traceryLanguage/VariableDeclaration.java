@@ -13,35 +13,35 @@ package uk.ac.kcl.inf.languages.tracery.traceryLanguage;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.VariableDeclaration#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.VariableDeclaration#getVariable <em>Variable</em>}</li>
  * </ul>
  *
  * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getVariableDeclaration()
  * @model
  * @generated
  */
-public interface VariableDeclaration extends InternalInstruction
+public interface VariableDeclaration extends InternalInstructions
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Variable</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getVariableDeclaration_Name()
+   * @return the value of the '<em>Variable</em>' reference.
+   * @see #setVariable(FirstJSONStatements)
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getVariableDeclaration_Variable()
    * @model
    * @generated
    */
-  String getName();
+  FirstJSONStatements getVariable();
 
   /**
-   * Sets the value of the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.VariableDeclaration#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.VariableDeclaration#getVariable <em>Variable</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
+   * @param value the new value of the '<em>Variable</em>' reference.
+   * @see #getVariable()
    * @generated
    */
-  void setName(String value);
+  void setVariable(FirstJSONStatements value);
 
 } // VariableDeclaration

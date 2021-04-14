@@ -81,34 +81,54 @@ public class TraceryLanguageAdapterFactory extends AdapterFactoryImpl
         return createTraceryProgramAdapter();
       }
       @Override
-      public Adapter caseInitialJSONExpression(InitialJSONExpression object)
+      public Adapter caseFirstJSONStatements(FirstJSONStatements object)
       {
-        return createInitialJSONExpressionAdapter();
+        return createFirstJSONStatementsAdapter();
       }
       @Override
-      public Adapter caseinitialValue(initialValue object)
+      public Adapter caseFirstJSONFinish(FirstJSONFinish object)
       {
-        return createinitialValueAdapter();
+        return createFirstJSONFinishAdapter();
       }
       @Override
-      public Adapter caseInternalInstruction(InternalInstruction object)
+      public Adapter caseInitialVal(InitialVal object)
       {
-        return createInternalInstructionAdapter();
+        return createInitialValAdapter();
       }
       @Override
-      public Adapter caseStandardJSONStatement(StandardJSONStatement object)
+      public Adapter caseInstruction(Instruction object)
       {
-        return createStandardJSONStatementAdapter();
+        return createInstructionAdapter();
       }
       @Override
-      public Adapter caseStartingJSONStatement(StartingJSONStatement object)
+      public Adapter caseInternalInstructions(InternalInstructions object)
       {
-        return createStartingJSONStatementAdapter();
+        return createInternalInstructionsAdapter();
       }
       @Override
-      public Adapter casestandardValue(standardValue object)
+      public Adapter caseInternalVals(InternalVals object)
       {
-        return createstandardValueAdapter();
+        return createInternalValsAdapter();
+      }
+      @Override
+      public Adapter caseLastJSONFinish(LastJSONFinish object)
+      {
+        return createLastJSONFinishAdapter();
+      }
+      @Override
+      public Adapter caseLastJSONStatement(LastJSONStatement object)
+      {
+        return createLastJSONStatementAdapter();
+      }
+      @Override
+      public Adapter caseStandardVal(StandardVal object)
+      {
+        return createStandardValAdapter();
+      }
+      @Override
+      public Adapter caseStringDeclaration(StringDeclaration object)
+      {
+        return createStringDeclarationAdapter();
       }
       @Override
       public Adapter caseVariableDeclaration(VariableDeclaration object)
@@ -153,91 +173,151 @@ public class TraceryLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONExpression <em>Initial JSON Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.FirstJSONStatements <em>First JSON Statements</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONExpression
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.FirstJSONStatements
    * @generated
    */
-  public Adapter createInitialJSONExpressionAdapter()
+  public Adapter createFirstJSONStatementsAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.initialValue <em>initial Value</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.FirstJSONFinish <em>First JSON Finish</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.initialValue
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.FirstJSONFinish
    * @generated
    */
-  public Adapter createinitialValueAdapter()
+  public Adapter createFirstJSONFinishAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InternalInstruction <em>Internal Instruction</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialVal <em>Initial Val</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.InternalInstruction
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialVal
    * @generated
    */
-  public Adapter createInternalInstructionAdapter()
+  public Adapter createInitialValAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.StandardJSONStatement <em>Standard JSON Statement</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.Instruction <em>Instruction</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.StandardJSONStatement
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.Instruction
    * @generated
    */
-  public Adapter createStandardJSONStatementAdapter()
+  public Adapter createInstructionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.StartingJSONStatement <em>Starting JSON Statement</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InternalInstructions <em>Internal Instructions</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.StartingJSONStatement
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.InternalInstructions
    * @generated
    */
-  public Adapter createStartingJSONStatementAdapter()
+  public Adapter createInternalInstructionsAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.standardValue <em>standard Value</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InternalVals <em>Internal Vals</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.standardValue
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.InternalVals
    * @generated
    */
-  public Adapter createstandardValueAdapter()
+  public Adapter createInternalValsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.LastJSONFinish <em>Last JSON Finish</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.LastJSONFinish
+   * @generated
+   */
+  public Adapter createLastJSONFinishAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.LastJSONStatement <em>Last JSON Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.LastJSONStatement
+   * @generated
+   */
+  public Adapter createLastJSONStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.StandardVal <em>Standard Val</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.StandardVal
+   * @generated
+   */
+  public Adapter createStandardValAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.StringDeclaration <em>String Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.StringDeclaration
+   * @generated
+   */
+  public Adapter createStringDeclarationAdapter()
   {
     return null;
   }

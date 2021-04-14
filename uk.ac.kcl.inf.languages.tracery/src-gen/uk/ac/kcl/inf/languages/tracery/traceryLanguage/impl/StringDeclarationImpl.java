@@ -8,25 +8,24 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InternalInstruction;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.StringDeclaration;
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Internal Instruction</b></em>'.
+ * An implementation of the model object '<em><b>String Declaration</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.InternalInstructionImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.StringDeclarationImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class InternalInstructionImpl extends MinimalEObjectImpl.Container implements InternalInstruction
+public class StringDeclarationImpl extends InternalInstructionsImpl implements StringDeclaration
 {
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -53,7 +52,7 @@ public class InternalInstructionImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  protected InternalInstructionImpl()
+  protected StringDeclarationImpl()
   {
     super();
   }
@@ -66,7 +65,7 @@ public class InternalInstructionImpl extends MinimalEObjectImpl.Container implem
   @Override
   protected EClass eStaticClass()
   {
-    return TraceryLanguagePackage.Literals.INTERNAL_INSTRUCTION;
+    return TraceryLanguagePackage.Literals.STRING_DECLARATION;
   }
 
   /**
@@ -91,7 +90,7 @@ public class InternalInstructionImpl extends MinimalEObjectImpl.Container implem
     String oldValue = value;
     value = newValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TraceryLanguagePackage.INTERNAL_INSTRUCTION__VALUE, oldValue, value));
+      eNotify(new ENotificationImpl(this, Notification.SET, TraceryLanguagePackage.STRING_DECLARATION__VALUE, oldValue, value));
   }
 
   /**
@@ -104,7 +103,7 @@ public class InternalInstructionImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.INTERNAL_INSTRUCTION__VALUE:
+      case TraceryLanguagePackage.STRING_DECLARATION__VALUE:
         return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -120,7 +119,7 @@ public class InternalInstructionImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.INTERNAL_INSTRUCTION__VALUE:
+      case TraceryLanguagePackage.STRING_DECLARATION__VALUE:
         setValue((String)newValue);
         return;
     }
@@ -137,7 +136,7 @@ public class InternalInstructionImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.INTERNAL_INSTRUCTION__VALUE:
+      case TraceryLanguagePackage.STRING_DECLARATION__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
     }
@@ -154,7 +153,7 @@ public class InternalInstructionImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.INTERNAL_INSTRUCTION__VALUE:
+      case TraceryLanguagePackage.STRING_DECLARATION__VALUE:
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
     }
     return super.eIsSet(featureID);
@@ -177,4 +176,4 @@ public class InternalInstructionImpl extends MinimalEObjectImpl.Container implem
     return result.toString();
   }
 
-} //InternalInstructionImpl
+} //StringDeclarationImpl

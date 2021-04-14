@@ -6,9 +6,11 @@ package uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.FirstJSONStatements;
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage;
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.VariableDeclaration;
 
@@ -20,32 +22,22 @@ import uk.ac.kcl.inf.languages.tracery.traceryLanguage.VariableDeclaration;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.VariableDeclarationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.impl.VariableDeclarationImpl#getVariable <em>Variable</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class VariableDeclarationImpl extends InternalInstructionImpl implements VariableDeclaration
+public class VariableDeclarationImpl extends InternalInstructionsImpl implements VariableDeclaration
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getVariable() <em>Variable</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getVariable()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
+  protected FirstJSONStatements variable;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,9 +66,29 @@ public class VariableDeclarationImpl extends InternalInstructionImpl implements 
    * @generated
    */
   @Override
-  public String getName()
+  public FirstJSONStatements getVariable()
   {
-    return name;
+    if (variable != null && variable.eIsProxy())
+    {
+      InternalEObject oldVariable = (InternalEObject)variable;
+      variable = (FirstJSONStatements)eResolveProxy(oldVariable);
+      if (variable != oldVariable)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, TraceryLanguagePackage.VARIABLE_DECLARATION__VARIABLE, oldVariable, variable));
+      }
+    }
+    return variable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FirstJSONStatements basicGetVariable()
+  {
+    return variable;
   }
 
   /**
@@ -85,12 +97,12 @@ public class VariableDeclarationImpl extends InternalInstructionImpl implements 
    * @generated
    */
   @Override
-  public void setName(String newName)
+  public void setVariable(FirstJSONStatements newVariable)
   {
-    String oldName = name;
-    name = newName;
+    FirstJSONStatements oldVariable = variable;
+    variable = newVariable;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TraceryLanguagePackage.VARIABLE_DECLARATION__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, TraceryLanguagePackage.VARIABLE_DECLARATION__VARIABLE, oldVariable, variable));
   }
 
   /**
@@ -103,8 +115,9 @@ public class VariableDeclarationImpl extends InternalInstructionImpl implements 
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.VARIABLE_DECLARATION__NAME:
-        return getName();
+      case TraceryLanguagePackage.VARIABLE_DECLARATION__VARIABLE:
+        if (resolve) return getVariable();
+        return basicGetVariable();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -119,8 +132,8 @@ public class VariableDeclarationImpl extends InternalInstructionImpl implements 
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.VARIABLE_DECLARATION__NAME:
-        setName((String)newValue);
+      case TraceryLanguagePackage.VARIABLE_DECLARATION__VARIABLE:
+        setVariable((FirstJSONStatements)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -136,8 +149,8 @@ public class VariableDeclarationImpl extends InternalInstructionImpl implements 
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.VARIABLE_DECLARATION__NAME:
-        setName(NAME_EDEFAULT);
+      case TraceryLanguagePackage.VARIABLE_DECLARATION__VARIABLE:
+        setVariable((FirstJSONStatements)null);
         return;
     }
     super.eUnset(featureID);
@@ -153,27 +166,10 @@ public class VariableDeclarationImpl extends InternalInstructionImpl implements 
   {
     switch (featureID)
     {
-      case TraceryLanguagePackage.VARIABLE_DECLARATION__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case TraceryLanguagePackage.VARIABLE_DECLARATION__VARIABLE:
+        return variable != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //VariableDeclarationImpl

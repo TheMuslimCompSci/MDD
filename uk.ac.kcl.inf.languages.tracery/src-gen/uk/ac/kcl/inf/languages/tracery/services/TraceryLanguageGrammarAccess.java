@@ -6,7 +6,6 @@ package uk.ac.kcl.inf.languages.tracery.services;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import java.util.List;
-import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.CrossReference;
@@ -28,276 +27,241 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.TraceryProgram");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Action cTraceryProgramAction_1 = (Action)cGroup.eContents().get(1);
-		private final Assignment cStartingInstructionAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cStartingInstructionStartingJSONStatementParserRuleCall_2_0 = (RuleCall)cStartingInstructionAssignment_2.eContents().get(0);
-		private final Assignment cInstructionsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cInstructionsStandardJSONStatementParserRuleCall_3_0 = (RuleCall)cInstructionsAssignment_3.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cInstructionsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cInstructionsInstructionParserRuleCall_1_0 = (RuleCall)cInstructionsAssignment_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//TraceryProgram:
-		//	'{' {TraceryProgram} startingInstruction=StartingJSONStatement
-		//	instructions+=StandardJSONStatement*
+		//	'{'
+		//	instructions+=Instruction
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'{' {TraceryProgram} startingInstruction=StartingJSONStatement
-		//instructions+=StandardJSONStatement*
+		//'{'
+		//instructions+=Instruction
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
 		
-		//{TraceryProgram}
-		public Action getTraceryProgramAction_1() { return cTraceryProgramAction_1; }
+		//instructions+=Instruction
+		public Assignment getInstructionsAssignment_1() { return cInstructionsAssignment_1; }
 		
-		//startingInstruction=StartingJSONStatement
-		public Assignment getStartingInstructionAssignment_2() { return cStartingInstructionAssignment_2; }
-		
-		//StartingJSONStatement
-		public RuleCall getStartingInstructionStartingJSONStatementParserRuleCall_2_0() { return cStartingInstructionStartingJSONStatementParserRuleCall_2_0; }
-		
-		//instructions+=StandardJSONStatement*
-		public Assignment getInstructionsAssignment_3() { return cInstructionsAssignment_3; }
-		
-		//StandardJSONStatement
-		public RuleCall getInstructionsStandardJSONStatementParserRuleCall_3_0() { return cInstructionsStandardJSONStatementParserRuleCall_3_0; }
+		//Instruction
+		public RuleCall getInstructionsInstructionParserRuleCall_1_0() { return cInstructionsInstructionParserRuleCall_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		public Keyword getRightCurlyBracketKeyword_2() { return cRightCurlyBracketKeyword_2; }
 	}
-	public class InitialJSONExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.InitialJSONExpression");
-		private final Assignment cVarAssignment = (Assignment)rule.eContents().get(1);
-		private final CrossReference cVarVariableDeclarationCrossReference_0 = (CrossReference)cVarAssignment.eContents().get(0);
-		private final RuleCall cVarVariableDeclarationIDTerminalRuleCall_0_1 = (RuleCall)cVarVariableDeclarationCrossReference_0.eContents().get(1);
+	public class FirstJSONStatementsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.FirstJSONStatements");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cAmpersandKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cAmpersandKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cValueAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cValueFirstJSONFinishParserRuleCall_4_0 = (RuleCall)cValueAssignment_4.eContents().get(0);
 		
-		//InitialJSONExpression hidden():
-		//	var=[VariableDeclaration];
+		//FirstJSONStatements hidden():
+		//	'&' name=ID '&' ':' value=FirstJSONFinish;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//var=[VariableDeclaration]
-		public Assignment getVarAssignment() { return cVarAssignment; }
+		//'&' name=ID '&' ':' value=FirstJSONFinish
+		public Group getGroup() { return cGroup; }
 		
-		//[VariableDeclaration]
-		public CrossReference getVarVariableDeclarationCrossReference_0() { return cVarVariableDeclarationCrossReference_0; }
+		//'&'
+		public Keyword getAmpersandKeyword_0() { return cAmpersandKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
-		public RuleCall getVarVariableDeclarationIDTerminalRuleCall_0_1() { return cVarVariableDeclarationIDTerminalRuleCall_0_1; }
-	}
-	public class InitialValueElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.initialValue");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cInitialValueAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cAmpersandKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueInternalInstructionParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
-		private final Keyword cAmpersandKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		
-		//initialValue hidden(WS):
-		//	{initialValue} '&' value+=InternalInstruction* '&';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{initialValue} '&' value+=InternalInstruction* '&'
-		public Group getGroup() { return cGroup; }
-		
-		//{initialValue}
-		public Action getInitialValueAction_0() { return cInitialValueAction_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
 		//'&'
-		public Keyword getAmpersandKeyword_1() { return cAmpersandKeyword_1; }
-		
-		//value+=InternalInstruction*
-		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
-		
-		//InternalInstruction
-		public RuleCall getValueInternalInstructionParserRuleCall_2_0() { return cValueInternalInstructionParserRuleCall_2_0; }
-		
-		//'&'
-		public Keyword getAmpersandKeyword_3() { return cAmpersandKeyword_3; }
-	}
-	public class InternalInstructionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.InternalInstruction");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cValueAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cValueSTRINGTerminalRuleCall_0_0 = (RuleCall)cValueAssignment_0.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Keyword cNumberSignKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final RuleCall cVariableDeclarationParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
-		private final Keyword cAKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
-		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Keyword cNumberSignKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final RuleCall cVariableDeclarationParserRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
-		private final Keyword cCapitaliseKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
-		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final Keyword cNumberSignKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final RuleCall cVariableDeclarationParserRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
-		private final Keyword cEdKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
-		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
-		private final Keyword cNumberSignKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final RuleCall cVariableDeclarationParserRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
-		private final Keyword cTheKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
-		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
-		private final Keyword cNumberSignKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final RuleCall cVariableDeclarationParserRuleCall_5_1 = (RuleCall)cGroup_5.eContents().get(1);
-		private final Keyword cNumberSignKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
-		
-		//InternalInstruction hidden():
-		//	value=STRING |
-		//	'#' VariableDeclaration '.a#' |
-		//	'#' VariableDeclaration '.capitalise#' |
-		//	'#' VariableDeclaration '.ed#' |
-		//	'#' VariableDeclaration '.the#' |
-		//	'#' VariableDeclaration '#';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//value=STRING |
-		//'#' VariableDeclaration '.a#' |
-		//'#' VariableDeclaration '.capitalise#' |
-		//'#' VariableDeclaration '.ed#' |
-		//'#' VariableDeclaration '.the#' |
-		//'#' VariableDeclaration '#'
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//value=STRING
-		public Assignment getValueAssignment_0() { return cValueAssignment_0; }
-		
-		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_0_0() { return cValueSTRINGTerminalRuleCall_0_0; }
-		
-		//'#' VariableDeclaration '.a#'
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//'#'
-		public Keyword getNumberSignKeyword_1_0() { return cNumberSignKeyword_1_0; }
-		
-		//VariableDeclaration
-		public RuleCall getVariableDeclarationParserRuleCall_1_1() { return cVariableDeclarationParserRuleCall_1_1; }
-		
-		//'.a#'
-		public Keyword getAKeyword_1_2() { return cAKeyword_1_2; }
-		
-		//'#' VariableDeclaration '.capitalise#'
-		public Group getGroup_2() { return cGroup_2; }
-		
-		//'#'
-		public Keyword getNumberSignKeyword_2_0() { return cNumberSignKeyword_2_0; }
-		
-		//VariableDeclaration
-		public RuleCall getVariableDeclarationParserRuleCall_2_1() { return cVariableDeclarationParserRuleCall_2_1; }
-		
-		//'.capitalise#'
-		public Keyword getCapitaliseKeyword_2_2() { return cCapitaliseKeyword_2_2; }
-		
-		//'#' VariableDeclaration '.ed#'
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//'#'
-		public Keyword getNumberSignKeyword_3_0() { return cNumberSignKeyword_3_0; }
-		
-		//VariableDeclaration
-		public RuleCall getVariableDeclarationParserRuleCall_3_1() { return cVariableDeclarationParserRuleCall_3_1; }
-		
-		//'.ed#'
-		public Keyword getEdKeyword_3_2() { return cEdKeyword_3_2; }
-		
-		//'#' VariableDeclaration '.the#'
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//'#'
-		public Keyword getNumberSignKeyword_4_0() { return cNumberSignKeyword_4_0; }
-		
-		//VariableDeclaration
-		public RuleCall getVariableDeclarationParserRuleCall_4_1() { return cVariableDeclarationParserRuleCall_4_1; }
-		
-		//'.the#'
-		public Keyword getTheKeyword_4_2() { return cTheKeyword_4_2; }
-		
-		//'#' VariableDeclaration '#'
-		public Group getGroup_5() { return cGroup_5; }
-		
-		//'#'
-		public Keyword getNumberSignKeyword_5_0() { return cNumberSignKeyword_5_0; }
-		
-		//VariableDeclaration
-		public RuleCall getVariableDeclarationParserRuleCall_5_1() { return cVariableDeclarationParserRuleCall_5_1; }
-		
-		//'#'
-		public Keyword getNumberSignKeyword_5_2() { return cNumberSignKeyword_5_2; }
-	}
-	public class StandardJSONStatementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.StandardJSONStatement");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cCommaKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cAmpersandKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final RuleCall cInitialJSONExpressionParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-		private final Keyword cAmpersandKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cLeftSquareBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cInitialValuesAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cInitialValuesInitialValueParserRuleCall_6_0 = (RuleCall)cInitialValuesAssignment_6.eContents().get(0);
-		private final Assignment cStandardValuesAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cStandardValuesStandardValueParserRuleCall_7_0 = (RuleCall)cStandardValuesAssignment_7.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		
-		//StandardJSONStatement hidden(WS):
-		//	',' '&' InitialJSONExpression '&' ':' '[' initialValues+=initialValue standardValues+=standardValue* ']';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//',' '&' InitialJSONExpression '&' ':' '[' initialValues+=initialValue standardValues+=standardValue* ']'
-		public Group getGroup() { return cGroup; }
-		
-		//','
-		public Keyword getCommaKeyword_0() { return cCommaKeyword_0; }
-		
-		//'&'
-		public Keyword getAmpersandKeyword_1() { return cAmpersandKeyword_1; }
-		
-		//InitialJSONExpression
-		public RuleCall getInitialJSONExpressionParserRuleCall_2() { return cInitialJSONExpressionParserRuleCall_2; }
-		
-		//'&'
-		public Keyword getAmpersandKeyword_3() { return cAmpersandKeyword_3; }
+		public Keyword getAmpersandKeyword_2() { return cAmpersandKeyword_2; }
 		
 		//':'
-		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//value=FirstJSONFinish
+		public Assignment getValueAssignment_4() { return cValueAssignment_4; }
+		
+		//FirstJSONFinish
+		public RuleCall getValueFirstJSONFinishParserRuleCall_4_0() { return cValueFirstJSONFinishParserRuleCall_4_0; }
+	}
+	public class FirstJSONFinishElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.FirstJSONFinish");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cInternalValsParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Keyword cRightSquareBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//FirstJSONFinish hidden():
+		//	'[' InternalVals ']' ',';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'[' InternalVals ']' ','
+		public Group getGroup() { return cGroup; }
 		
 		//'['
-		public Keyword getLeftSquareBracketKeyword_5() { return cLeftSquareBracketKeyword_5; }
+		public Keyword getLeftSquareBracketKeyword_0() { return cLeftSquareBracketKeyword_0; }
 		
-		//initialValues+=initialValue
-		public Assignment getInitialValuesAssignment_6() { return cInitialValuesAssignment_6; }
-		
-		//initialValue
-		public RuleCall getInitialValuesInitialValueParserRuleCall_6_0() { return cInitialValuesInitialValueParserRuleCall_6_0; }
-		
-		//standardValues+=standardValue*
-		public Assignment getStandardValuesAssignment_7() { return cStandardValuesAssignment_7; }
-		
-		//standardValue
-		public RuleCall getStandardValuesStandardValueParserRuleCall_7_0() { return cStandardValuesStandardValueParserRuleCall_7_0; }
+		//InternalVals
+		public RuleCall getInternalValsParserRuleCall_1() { return cInternalValsParserRuleCall_1; }
 		
 		//']'
-		public Keyword getRightSquareBracketKeyword_8() { return cRightSquareBracketKeyword_8; }
+		public Keyword getRightSquareBracketKeyword_2() { return cRightSquareBracketKeyword_2; }
+		
+		//','
+		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
 	}
-	public class StartingJSONStatementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.StartingJSONStatement");
+	public class InitialValElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.InitialVal");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cAmpersandKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cValInternalInstructionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValInternalInstructionInternalInstructionsParserRuleCall_1_0 = (RuleCall)cValInternalInstructionAssignment_1.eContents().get(0);
+		private final Keyword cAmpersandKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//InitialVal hidden(WS):
+		//	'&' valInternalInstruction+=InternalInstructions+ '&';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'&' valInternalInstruction+=InternalInstructions+ '&'
+		public Group getGroup() { return cGroup; }
+		
+		//'&'
+		public Keyword getAmpersandKeyword_0() { return cAmpersandKeyword_0; }
+		
+		//valInternalInstruction+=InternalInstructions+
+		public Assignment getValInternalInstructionAssignment_1() { return cValInternalInstructionAssignment_1; }
+		
+		//InternalInstructions
+		public RuleCall getValInternalInstructionInternalInstructionsParserRuleCall_1_0() { return cValInternalInstructionInternalInstructionsParserRuleCall_1_0; }
+		
+		//'&'
+		public Keyword getAmpersandKeyword_2() { return cAmpersandKeyword_2; }
+	}
+	public class InstructionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.Instruction");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cFirstInstructionAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cFirstInstructionFirstJSONStatementsParserRuleCall_0_0 = (RuleCall)cFirstInstructionAssignment_0.eContents().get(0);
+		private final Assignment cLastInstructionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cLastInstructionLastJSONStatementParserRuleCall_1_0 = (RuleCall)cLastInstructionAssignment_1.eContents().get(0);
+		
+		//Instruction hidden(WS):
+		//	firstInstruction+=FirstJSONStatements*
+		//	lastInstruction=LastJSONStatement;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//firstInstruction+=FirstJSONStatements*
+		//lastInstruction=LastJSONStatement
+		public Group getGroup() { return cGroup; }
+		
+		//firstInstruction+=FirstJSONStatements*
+		public Assignment getFirstInstructionAssignment_0() { return cFirstInstructionAssignment_0; }
+		
+		//FirstJSONStatements
+		public RuleCall getFirstInstructionFirstJSONStatementsParserRuleCall_0_0() { return cFirstInstructionFirstJSONStatementsParserRuleCall_0_0; }
+		
+		//lastInstruction=LastJSONStatement
+		public Assignment getLastInstructionAssignment_1() { return cLastInstructionAssignment_1; }
+		
+		//LastJSONStatement
+		public RuleCall getLastInstructionLastJSONStatementParserRuleCall_1_0() { return cLastInstructionLastJSONStatementParserRuleCall_1_0; }
+	}
+	public class InternalInstructionsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.InternalInstructions");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cVariableDeclarationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cStringDeclarationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//InternalInstructions hidden():
+		//	VariableDeclaration | StringDeclaration;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//VariableDeclaration | StringDeclaration
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//VariableDeclaration
+		public RuleCall getVariableDeclarationParserRuleCall_0() { return cVariableDeclarationParserRuleCall_0; }
+		
+		//StringDeclaration
+		public RuleCall getStringDeclarationParserRuleCall_1() { return cStringDeclarationParserRuleCall_1; }
+	}
+	public class InternalValsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.InternalVals");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cInitialValParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Assignment cValsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValsStandardValParserRuleCall_1_0 = (RuleCall)cValsAssignment_1.eContents().get(0);
+		
+		//InternalVals hidden():
+		//	InitialVal vals+=StandardVal*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//InitialVal vals+=StandardVal*
+		public Group getGroup() { return cGroup; }
+		
+		//InitialVal
+		public RuleCall getInitialValParserRuleCall_0() { return cInitialValParserRuleCall_0; }
+		
+		//vals+=StandardVal*
+		public Assignment getValsAssignment_1() { return cValsAssignment_1; }
+		
+		//StandardVal
+		public RuleCall getValsStandardValParserRuleCall_1_0() { return cValsStandardValParserRuleCall_1_0; }
+	}
+	public class LastJSONFinishElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.LastJSONFinish");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cInitialValParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Assignment cValsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValsStandardValParserRuleCall_2_0 = (RuleCall)cValsAssignment_2.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//LastJSONFinish hidden(WS):
+		//	'[' InitialVal vals+=StandardVal* ']';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'[' InitialVal vals+=StandardVal* ']'
+		public Group getGroup() { return cGroup; }
+		
+		//'['
+		public Keyword getLeftSquareBracketKeyword_0() { return cLeftSquareBracketKeyword_0; }
+		
+		//InitialVal
+		public RuleCall getInitialValParserRuleCall_1() { return cInitialValParserRuleCall_1; }
+		
+		//vals+=StandardVal*
+		public Assignment getValsAssignment_2() { return cValsAssignment_2; }
+		
+		//StandardVal
+		public RuleCall getValsStandardValParserRuleCall_2_0() { return cValsStandardValParserRuleCall_2_0; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_3() { return cRightSquareBracketKeyword_3; }
+	}
+	public class LastJSONStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.LastJSONStatement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cOriginKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftSquareBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cInitialValuesAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cInitialValuesInitialValueParserRuleCall_3_0 = (RuleCall)cInitialValuesAssignment_3.eContents().get(0);
-		private final Assignment cStandardValuesAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cStandardValuesStandardValueParserRuleCall_4_0 = (RuleCall)cStandardValuesAssignment_4.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValueLastJSONFinishParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		
-		//StartingJSONStatement hidden(WS):
-		//	'&origin&' ':' '[' initialValues+=initialValue standardValues+=standardValue* ']';
+		//LastJSONStatement hidden(WS):
+		//	'&origin&' ':' value=LastJSONFinish;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'&origin&' ':' '[' initialValues+=initialValue standardValues+=standardValue* ']'
+		//'&origin&' ':' value=LastJSONFinish
 		public Group getGroup() { return cGroup; }
 		
 		//'&origin&'
@@ -306,83 +270,102 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		//':'
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 		
-		//'['
-		public Keyword getLeftSquareBracketKeyword_2() { return cLeftSquareBracketKeyword_2; }
+		//value=LastJSONFinish
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
 		
-		//initialValues+=initialValue
-		public Assignment getInitialValuesAssignment_3() { return cInitialValuesAssignment_3; }
-		
-		//initialValue
-		public RuleCall getInitialValuesInitialValueParserRuleCall_3_0() { return cInitialValuesInitialValueParserRuleCall_3_0; }
-		
-		//standardValues+=standardValue*
-		public Assignment getStandardValuesAssignment_4() { return cStandardValuesAssignment_4; }
-		
-		//standardValue
-		public RuleCall getStandardValuesStandardValueParserRuleCall_4_0() { return cStandardValuesStandardValueParserRuleCall_4_0; }
-		
-		//']'
-		public Keyword getRightSquareBracketKeyword_5() { return cRightSquareBracketKeyword_5; }
+		//LastJSONFinish
+		public RuleCall getValueLastJSONFinishParserRuleCall_2_0() { return cValueLastJSONFinishParserRuleCall_2_0; }
 	}
-	public class StandardValueElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.standardValue");
+	public class StandardValElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.StandardVal");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cStandardValueAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cCommaKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cAmpersandKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cValueInternalInstructionParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
-		private final Keyword cAmpersandKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cCommaKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cAmpersandKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cValInternalInstructionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValInternalInstructionInternalInstructionsParserRuleCall_2_0 = (RuleCall)cValInternalInstructionAssignment_2.eContents().get(0);
+		private final Keyword cAmpersandKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
-		//standardValue hidden(WS):
-		//	{standardValue} ',' '&' value+=InternalInstruction* '&';
+		//StandardVal hidden(WS):
+		//	',' '&' valInternalInstruction+=InternalInstructions+ '&';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{standardValue} ',' '&' value+=InternalInstruction* '&'
+		//',' '&' valInternalInstruction+=InternalInstructions+ '&'
 		public Group getGroup() { return cGroup; }
 		
-		//{standardValue}
-		public Action getStandardValueAction_0() { return cStandardValueAction_0; }
-		
 		//','
-		public Keyword getCommaKeyword_1() { return cCommaKeyword_1; }
+		public Keyword getCommaKeyword_0() { return cCommaKeyword_0; }
 		
 		//'&'
-		public Keyword getAmpersandKeyword_2() { return cAmpersandKeyword_2; }
+		public Keyword getAmpersandKeyword_1() { return cAmpersandKeyword_1; }
 		
-		//value+=InternalInstruction*
-		public Assignment getValueAssignment_3() { return cValueAssignment_3; }
+		//valInternalInstruction+=InternalInstructions+
+		public Assignment getValInternalInstructionAssignment_2() { return cValInternalInstructionAssignment_2; }
 		
-		//InternalInstruction
-		public RuleCall getValueInternalInstructionParserRuleCall_3_0() { return cValueInternalInstructionParserRuleCall_3_0; }
+		//InternalInstructions
+		public RuleCall getValInternalInstructionInternalInstructionsParserRuleCall_2_0() { return cValInternalInstructionInternalInstructionsParserRuleCall_2_0; }
 		
 		//'&'
-		public Keyword getAmpersandKeyword_4() { return cAmpersandKeyword_4; }
+		public Keyword getAmpersandKeyword_3() { return cAmpersandKeyword_3; }
+	}
+	public class StringDeclarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.StringDeclaration");
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cValueSTRINGTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
+		
+		//StringDeclaration hidden():
+		//	value=STRING;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//value=STRING
+		public Assignment getValueAssignment() { return cValueAssignment; }
+		
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_0() { return cValueSTRINGTerminalRuleCall_0; }
 	}
 	public class VariableDeclarationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.VariableDeclaration");
-		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cNumberSignKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cVariableAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cVariableFirstJSONStatementsCrossReference_1_0 = (CrossReference)cVariableAssignment_1.eContents().get(0);
+		private final RuleCall cVariableFirstJSONStatementsIDTerminalRuleCall_1_0_1 = (RuleCall)cVariableFirstJSONStatementsCrossReference_1_0.eContents().get(1);
+		private final Keyword cNumberSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//VariableDeclaration hidden():
-		//	name=ID;
+		//	'#' variable=[FirstJSONStatements] '#';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID
-		public Assignment getNameAssignment() { return cNameAssignment; }
+		//'#' variable=[FirstJSONStatements] '#'
+		public Group getGroup() { return cGroup; }
+		
+		//'#'
+		public Keyword getNumberSignKeyword_0() { return cNumberSignKeyword_0; }
+		
+		//variable=[FirstJSONStatements]
+		public Assignment getVariableAssignment_1() { return cVariableAssignment_1; }
+		
+		//[FirstJSONStatements]
+		public CrossReference getVariableFirstJSONStatementsCrossReference_1_0() { return cVariableFirstJSONStatementsCrossReference_1_0; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
+		public RuleCall getVariableFirstJSONStatementsIDTerminalRuleCall_1_0_1() { return cVariableFirstJSONStatementsIDTerminalRuleCall_1_0_1; }
+		
+		//'#'
+		public Keyword getNumberSignKeyword_2() { return cNumberSignKeyword_2; }
 	}
 	
 	
 	private final TraceryProgramElements pTraceryProgram;
-	private final InitialJSONExpressionElements pInitialJSONExpression;
-	private final InitialValueElements pInitialValue;
-	private final InternalInstructionElements pInternalInstruction;
-	private final StandardJSONStatementElements pStandardJSONStatement;
-	private final StartingJSONStatementElements pStartingJSONStatement;
-	private final StandardValueElements pStandardValue;
+	private final FirstJSONStatementsElements pFirstJSONStatements;
+	private final FirstJSONFinishElements pFirstJSONFinish;
+	private final InitialValElements pInitialVal;
+	private final InstructionElements pInstruction;
+	private final InternalInstructionsElements pInternalInstructions;
+	private final InternalValsElements pInternalVals;
+	private final LastJSONFinishElements pLastJSONFinish;
+	private final LastJSONStatementElements pLastJSONStatement;
+	private final StandardValElements pStandardVal;
+	private final StringDeclarationElements pStringDeclaration;
 	private final VariableDeclarationElements pVariableDeclaration;
 	
 	private final Grammar grammar;
@@ -395,12 +378,16 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pTraceryProgram = new TraceryProgramElements();
-		this.pInitialJSONExpression = new InitialJSONExpressionElements();
-		this.pInitialValue = new InitialValueElements();
-		this.pInternalInstruction = new InternalInstructionElements();
-		this.pStandardJSONStatement = new StandardJSONStatementElements();
-		this.pStartingJSONStatement = new StartingJSONStatementElements();
-		this.pStandardValue = new StandardValueElements();
+		this.pFirstJSONStatements = new FirstJSONStatementsElements();
+		this.pFirstJSONFinish = new FirstJSONFinishElements();
+		this.pInitialVal = new InitialValElements();
+		this.pInstruction = new InstructionElements();
+		this.pInternalInstructions = new InternalInstructionsElements();
+		this.pInternalVals = new InternalValsElements();
+		this.pLastJSONFinish = new LastJSONFinishElements();
+		this.pLastJSONStatement = new LastJSONStatementElements();
+		this.pStandardVal = new StandardValElements();
+		this.pStringDeclaration = new StringDeclarationElements();
 		this.pVariableDeclaration = new VariableDeclarationElements();
 	}
 	
@@ -432,8 +419,8 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 
 	
 	//TraceryProgram:
-	//	'{' {TraceryProgram} startingInstruction=StartingJSONStatement
-	//	instructions+=StandardJSONStatement*
+	//	'{'
+	//	instructions+=Instruction
 	//	'}';
 	public TraceryProgramElements getTraceryProgramAccess() {
 		return pTraceryProgram;
@@ -443,73 +430,109 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		return getTraceryProgramAccess().getRule();
 	}
 	
-	//InitialJSONExpression hidden():
-	//	var=[VariableDeclaration];
-	public InitialJSONExpressionElements getInitialJSONExpressionAccess() {
-		return pInitialJSONExpression;
+	//FirstJSONStatements hidden():
+	//	'&' name=ID '&' ':' value=FirstJSONFinish;
+	public FirstJSONStatementsElements getFirstJSONStatementsAccess() {
+		return pFirstJSONStatements;
 	}
 	
-	public ParserRule getInitialJSONExpressionRule() {
-		return getInitialJSONExpressionAccess().getRule();
+	public ParserRule getFirstJSONStatementsRule() {
+		return getFirstJSONStatementsAccess().getRule();
 	}
 	
-	//initialValue hidden(WS):
-	//	{initialValue} '&' value+=InternalInstruction* '&';
-	public InitialValueElements getInitialValueAccess() {
-		return pInitialValue;
+	//FirstJSONFinish hidden():
+	//	'[' InternalVals ']' ',';
+	public FirstJSONFinishElements getFirstJSONFinishAccess() {
+		return pFirstJSONFinish;
 	}
 	
-	public ParserRule getInitialValueRule() {
-		return getInitialValueAccess().getRule();
+	public ParserRule getFirstJSONFinishRule() {
+		return getFirstJSONFinishAccess().getRule();
 	}
 	
-	//InternalInstruction hidden():
-	//	value=STRING |
-	//	'#' VariableDeclaration '.a#' |
-	//	'#' VariableDeclaration '.capitalise#' |
-	//	'#' VariableDeclaration '.ed#' |
-	//	'#' VariableDeclaration '.the#' |
-	//	'#' VariableDeclaration '#';
-	public InternalInstructionElements getInternalInstructionAccess() {
-		return pInternalInstruction;
+	//InitialVal hidden(WS):
+	//	'&' valInternalInstruction+=InternalInstructions+ '&';
+	public InitialValElements getInitialValAccess() {
+		return pInitialVal;
 	}
 	
-	public ParserRule getInternalInstructionRule() {
-		return getInternalInstructionAccess().getRule();
+	public ParserRule getInitialValRule() {
+		return getInitialValAccess().getRule();
 	}
 	
-	//StandardJSONStatement hidden(WS):
-	//	',' '&' InitialJSONExpression '&' ':' '[' initialValues+=initialValue standardValues+=standardValue* ']';
-	public StandardJSONStatementElements getStandardJSONStatementAccess() {
-		return pStandardJSONStatement;
+	//Instruction hidden(WS):
+	//	firstInstruction+=FirstJSONStatements*
+	//	lastInstruction=LastJSONStatement;
+	public InstructionElements getInstructionAccess() {
+		return pInstruction;
 	}
 	
-	public ParserRule getStandardJSONStatementRule() {
-		return getStandardJSONStatementAccess().getRule();
+	public ParserRule getInstructionRule() {
+		return getInstructionAccess().getRule();
 	}
 	
-	//StartingJSONStatement hidden(WS):
-	//	'&origin&' ':' '[' initialValues+=initialValue standardValues+=standardValue* ']';
-	public StartingJSONStatementElements getStartingJSONStatementAccess() {
-		return pStartingJSONStatement;
+	//InternalInstructions hidden():
+	//	VariableDeclaration | StringDeclaration;
+	public InternalInstructionsElements getInternalInstructionsAccess() {
+		return pInternalInstructions;
 	}
 	
-	public ParserRule getStartingJSONStatementRule() {
-		return getStartingJSONStatementAccess().getRule();
+	public ParserRule getInternalInstructionsRule() {
+		return getInternalInstructionsAccess().getRule();
 	}
 	
-	//standardValue hidden(WS):
-	//	{standardValue} ',' '&' value+=InternalInstruction* '&';
-	public StandardValueElements getStandardValueAccess() {
-		return pStandardValue;
+	//InternalVals hidden():
+	//	InitialVal vals+=StandardVal*;
+	public InternalValsElements getInternalValsAccess() {
+		return pInternalVals;
 	}
 	
-	public ParserRule getStandardValueRule() {
-		return getStandardValueAccess().getRule();
+	public ParserRule getInternalValsRule() {
+		return getInternalValsAccess().getRule();
+	}
+	
+	//LastJSONFinish hidden(WS):
+	//	'[' InitialVal vals+=StandardVal* ']';
+	public LastJSONFinishElements getLastJSONFinishAccess() {
+		return pLastJSONFinish;
+	}
+	
+	public ParserRule getLastJSONFinishRule() {
+		return getLastJSONFinishAccess().getRule();
+	}
+	
+	//LastJSONStatement hidden(WS):
+	//	'&origin&' ':' value=LastJSONFinish;
+	public LastJSONStatementElements getLastJSONStatementAccess() {
+		return pLastJSONStatement;
+	}
+	
+	public ParserRule getLastJSONStatementRule() {
+		return getLastJSONStatementAccess().getRule();
+	}
+	
+	//StandardVal hidden(WS):
+	//	',' '&' valInternalInstruction+=InternalInstructions+ '&';
+	public StandardValElements getStandardValAccess() {
+		return pStandardVal;
+	}
+	
+	public ParserRule getStandardValRule() {
+		return getStandardValAccess().getRule();
+	}
+	
+	//StringDeclaration hidden():
+	//	value=STRING;
+	public StringDeclarationElements getStringDeclarationAccess() {
+		return pStringDeclaration;
+	}
+	
+	public ParserRule getStringDeclarationRule() {
+		return getStringDeclarationAccess().getRule();
 	}
 	
 	//VariableDeclaration hidden():
-	//	name=ID;
+	//	'#' variable=[FirstJSONStatements] '#';
 	public VariableDeclarationElements getVariableDeclarationAccess() {
 		return pVariableDeclaration;
 	}

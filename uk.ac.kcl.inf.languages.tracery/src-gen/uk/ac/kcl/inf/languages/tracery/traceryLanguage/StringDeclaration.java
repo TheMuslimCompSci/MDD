@@ -3,25 +3,24 @@
  */
 package uk.ac.kcl.inf.languages.tracery.traceryLanguage;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Internal Instruction</b></em>'.
+ * A representation of the model object '<em><b>String Declaration</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InternalInstruction#getValue <em>Value</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.StringDeclaration#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getInternalInstruction()
+ * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getStringDeclaration()
  * @model
  * @generated
  */
-public interface InternalInstruction extends EObject
+public interface StringDeclaration extends InternalInstructions
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.
@@ -29,14 +28,14 @@ public interface InternalInstruction extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' attribute.
    * @see #setValue(String)
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getInternalInstruction_Value()
+   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getStringDeclaration_Value()
    * @model
    * @generated
    */
   String getValue();
 
   /**
-   * Sets the value of the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.InternalInstruction#getValue <em>Value</em>}' attribute.
+   * Sets the value of the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.StringDeclaration#getValue <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Value</em>' attribute.
@@ -45,4 +44,4 @@ public interface InternalInstruction extends EObject
    */
   void setValue(String value);
 
-} // InternalInstruction
+} // StringDeclaration

@@ -7,24 +7,24 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import uk.ac.kcl.inf.languages.tracery.traceryLanguage.StandardJSONStatement;
+import uk.ac.kcl.inf.languages.tracery.traceryLanguage.LastJSONFinish;
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Standard JSON Statement</b></em>'.
+ * An implementation of the model object '<em><b>Last JSON Finish</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class StandardJSONStatementImpl extends MinimalEObjectImpl.Container implements StandardJSONStatement
+public class LastJSONFinishImpl extends MinimalEObjectImpl.Container implements LastJSONFinish
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected StandardJSONStatementImpl()
+  protected LastJSONFinishImpl()
   {
     super();
   }
@@ -37,7 +37,7 @@ public class StandardJSONStatementImpl extends MinimalEObjectImpl.Container impl
   @Override
   protected EClass eStaticClass()
   {
-    return TraceryLanguagePackage.Literals.STANDARD_JSON_STATEMENT;
+    return TraceryLanguagePackage.Literals.LAST_JSON_FINISH;
   }
 
-} //StandardJSONStatementImpl
+} //LastJSONFinishImpl

@@ -7,30 +7,35 @@
   <genPackages prefix="TraceryLanguage" basePackage="uk.ac.kcl.inf.languages.tracery"
       disposableProviderFactory="true" fileExtensions="tracery" ecorePackage="TraceryLanguage.ecore#/">
     <genClasses ecoreClass="TraceryLanguage.ecore#//TraceryProgram">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryLanguage.ecore#//TraceryProgram/startingInstruction"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryLanguage.ecore#//TraceryProgram/instructions"/>
     </genClasses>
-    <genClasses ecoreClass="TraceryLanguage.ecore#//InitialJSONExpression">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TraceryLanguage.ecore#//InitialJSONExpression/var"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryLanguage.ecore#//InitialJSONExpression/initialValues"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryLanguage.ecore#//InitialJSONExpression/standardValues"/>
+    <genClasses ecoreClass="TraceryLanguage.ecore#//FirstJSONStatements">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryLanguage.ecore#//FirstJSONStatements/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryLanguage.ecore#//FirstJSONStatements/value"/>
     </genClasses>
-    <genClasses ecoreClass="TraceryLanguage.ecore#//initialValue">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryLanguage.ecore#//initialValue/value"/>
+    <genClasses ecoreClass="TraceryLanguage.ecore#//FirstJSONFinish"/>
+    <genClasses ecoreClass="TraceryLanguage.ecore#//InitialVal">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryLanguage.ecore#//InitialVal/valInternalInstruction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryLanguage.ecore#//InitialVal/vals"/>
     </genClasses>
-    <genClasses ecoreClass="TraceryLanguage.ecore#//InternalInstruction">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryLanguage.ecore#//InternalInstruction/value"/>
+    <genClasses ecoreClass="TraceryLanguage.ecore#//Instruction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryLanguage.ecore#//Instruction/firstInstruction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryLanguage.ecore#//Instruction/lastInstruction"/>
     </genClasses>
-    <genClasses ecoreClass="TraceryLanguage.ecore#//StandardJSONStatement"/>
-    <genClasses ecoreClass="TraceryLanguage.ecore#//StartingJSONStatement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryLanguage.ecore#//StartingJSONStatement/initialValues"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryLanguage.ecore#//StartingJSONStatement/standardValues"/>
+    <genClasses ecoreClass="TraceryLanguage.ecore#//InternalInstructions"/>
+    <genClasses ecoreClass="TraceryLanguage.ecore#//InternalVals"/>
+    <genClasses ecoreClass="TraceryLanguage.ecore#//LastJSONFinish"/>
+    <genClasses ecoreClass="TraceryLanguage.ecore#//LastJSONStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryLanguage.ecore#//LastJSONStatement/value"/>
     </genClasses>
-    <genClasses ecoreClass="TraceryLanguage.ecore#//standardValue">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryLanguage.ecore#//standardValue/value"/>
+    <genClasses ecoreClass="TraceryLanguage.ecore#//StandardVal">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryLanguage.ecore#//StandardVal/valInternalInstruction"/>
+    </genClasses>
+    <genClasses ecoreClass="TraceryLanguage.ecore#//StringDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryLanguage.ecore#//StringDeclaration/value"/>
     </genClasses>
     <genClasses ecoreClass="TraceryLanguage.ecore#//VariableDeclaration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryLanguage.ecore#//VariableDeclaration/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TraceryLanguage.ecore#//VariableDeclaration/variable"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

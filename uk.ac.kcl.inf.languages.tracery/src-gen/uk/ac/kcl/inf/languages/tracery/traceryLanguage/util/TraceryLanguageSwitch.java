@@ -80,46 +80,78 @@ public class TraceryLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TraceryLanguagePackage.INITIAL_JSON_EXPRESSION:
+      case TraceryLanguagePackage.FIRST_JSON_STATEMENTS:
       {
-        InitialJSONExpression initialJSONExpression = (InitialJSONExpression)theEObject;
-        T result = caseInitialJSONExpression(initialJSONExpression);
-        if (result == null) result = caseStandardJSONStatement(initialJSONExpression);
+        FirstJSONStatements firstJSONStatements = (FirstJSONStatements)theEObject;
+        T result = caseFirstJSONStatements(firstJSONStatements);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TraceryLanguagePackage.INITIAL_VALUE:
+      case TraceryLanguagePackage.FIRST_JSON_FINISH:
       {
-        initialValue initialValue = (initialValue)theEObject;
-        T result = caseinitialValue(initialValue);
+        FirstJSONFinish firstJSONFinish = (FirstJSONFinish)theEObject;
+        T result = caseFirstJSONFinish(firstJSONFinish);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TraceryLanguagePackage.INTERNAL_INSTRUCTION:
+      case TraceryLanguagePackage.INITIAL_VAL:
       {
-        InternalInstruction internalInstruction = (InternalInstruction)theEObject;
-        T result = caseInternalInstruction(internalInstruction);
+        InitialVal initialVal = (InitialVal)theEObject;
+        T result = caseInitialVal(initialVal);
+        if (result == null) result = caseInternalVals(initialVal);
+        if (result == null) result = caseLastJSONFinish(initialVal);
+        if (result == null) result = caseFirstJSONFinish(initialVal);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TraceryLanguagePackage.STANDARD_JSON_STATEMENT:
+      case TraceryLanguagePackage.INSTRUCTION:
       {
-        StandardJSONStatement standardJSONStatement = (StandardJSONStatement)theEObject;
-        T result = caseStandardJSONStatement(standardJSONStatement);
+        Instruction instruction = (Instruction)theEObject;
+        T result = caseInstruction(instruction);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TraceryLanguagePackage.STARTING_JSON_STATEMENT:
+      case TraceryLanguagePackage.INTERNAL_INSTRUCTIONS:
       {
-        StartingJSONStatement startingJSONStatement = (StartingJSONStatement)theEObject;
-        T result = caseStartingJSONStatement(startingJSONStatement);
+        InternalInstructions internalInstructions = (InternalInstructions)theEObject;
+        T result = caseInternalInstructions(internalInstructions);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TraceryLanguagePackage.STANDARD_VALUE:
+      case TraceryLanguagePackage.INTERNAL_VALS:
       {
-        standardValue standardValue = (standardValue)theEObject;
-        T result = casestandardValue(standardValue);
+        InternalVals internalVals = (InternalVals)theEObject;
+        T result = caseInternalVals(internalVals);
+        if (result == null) result = caseFirstJSONFinish(internalVals);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TraceryLanguagePackage.LAST_JSON_FINISH:
+      {
+        LastJSONFinish lastJSONFinish = (LastJSONFinish)theEObject;
+        T result = caseLastJSONFinish(lastJSONFinish);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TraceryLanguagePackage.LAST_JSON_STATEMENT:
+      {
+        LastJSONStatement lastJSONStatement = (LastJSONStatement)theEObject;
+        T result = caseLastJSONStatement(lastJSONStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TraceryLanguagePackage.STANDARD_VAL:
+      {
+        StandardVal standardVal = (StandardVal)theEObject;
+        T result = caseStandardVal(standardVal);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TraceryLanguagePackage.STRING_DECLARATION:
+      {
+        StringDeclaration stringDeclaration = (StringDeclaration)theEObject;
+        T result = caseStringDeclaration(stringDeclaration);
+        if (result == null) result = caseInternalInstructions(stringDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -127,7 +159,7 @@ public class TraceryLanguageSwitch<T> extends Switch<T>
       {
         VariableDeclaration variableDeclaration = (VariableDeclaration)theEObject;
         T result = caseVariableDeclaration(variableDeclaration);
-        if (result == null) result = caseInternalInstruction(variableDeclaration);
+        if (result == null) result = caseInternalInstructions(variableDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -152,97 +184,161 @@ public class TraceryLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Initial JSON Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>First JSON Statements</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Initial JSON Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>First JSON Statements</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseInitialJSONExpression(InitialJSONExpression object)
+  public T caseFirstJSONStatements(FirstJSONStatements object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>initial Value</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>First JSON Finish</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>initial Value</em>'.
+   * @return the result of interpreting the object as an instance of '<em>First JSON Finish</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseinitialValue(initialValue object)
+  public T caseFirstJSONFinish(FirstJSONFinish object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Internal Instruction</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Initial Val</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Internal Instruction</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Initial Val</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseInternalInstruction(InternalInstruction object)
+  public T caseInitialVal(InitialVal object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Standard JSON Statement</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Instruction</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Standard JSON Statement</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Instruction</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseStandardJSONStatement(StandardJSONStatement object)
+  public T caseInstruction(Instruction object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Starting JSON Statement</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Internal Instructions</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Starting JSON Statement</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Internal Instructions</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseStartingJSONStatement(StartingJSONStatement object)
+  public T caseInternalInstructions(InternalInstructions object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>standard Value</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Internal Vals</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>standard Value</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Internal Vals</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casestandardValue(standardValue object)
+  public T caseInternalVals(InternalVals object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Last JSON Finish</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Last JSON Finish</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLastJSONFinish(LastJSONFinish object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Last JSON Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Last JSON Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLastJSONStatement(LastJSONStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Standard Val</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Standard Val</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStandardVal(StandardVal object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringDeclaration(StringDeclaration object)
   {
     return null;
   }

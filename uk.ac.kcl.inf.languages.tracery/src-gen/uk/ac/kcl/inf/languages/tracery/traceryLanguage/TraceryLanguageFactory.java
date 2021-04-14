@@ -33,58 +33,94 @@ public interface TraceryLanguageFactory extends EFactory
   TraceryProgram createTraceryProgram();
 
   /**
-   * Returns a new object of class '<em>Initial JSON Expression</em>'.
+   * Returns a new object of class '<em>First JSON Statements</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Initial JSON Expression</em>'.
+   * @return a new object of class '<em>First JSON Statements</em>'.
    * @generated
    */
-  InitialJSONExpression createInitialJSONExpression();
+  FirstJSONStatements createFirstJSONStatements();
 
   /**
-   * Returns a new object of class '<em>initial Value</em>'.
+   * Returns a new object of class '<em>First JSON Finish</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>initial Value</em>'.
+   * @return a new object of class '<em>First JSON Finish</em>'.
    * @generated
    */
-  initialValue createinitialValue();
+  FirstJSONFinish createFirstJSONFinish();
 
   /**
-   * Returns a new object of class '<em>Internal Instruction</em>'.
+   * Returns a new object of class '<em>Initial Val</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Internal Instruction</em>'.
+   * @return a new object of class '<em>Initial Val</em>'.
    * @generated
    */
-  InternalInstruction createInternalInstruction();
+  InitialVal createInitialVal();
 
   /**
-   * Returns a new object of class '<em>Standard JSON Statement</em>'.
+   * Returns a new object of class '<em>Instruction</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Standard JSON Statement</em>'.
+   * @return a new object of class '<em>Instruction</em>'.
    * @generated
    */
-  StandardJSONStatement createStandardJSONStatement();
+  Instruction createInstruction();
 
   /**
-   * Returns a new object of class '<em>Starting JSON Statement</em>'.
+   * Returns a new object of class '<em>Internal Instructions</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Starting JSON Statement</em>'.
+   * @return a new object of class '<em>Internal Instructions</em>'.
    * @generated
    */
-  StartingJSONStatement createStartingJSONStatement();
+  InternalInstructions createInternalInstructions();
 
   /**
-   * Returns a new object of class '<em>standard Value</em>'.
+   * Returns a new object of class '<em>Internal Vals</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>standard Value</em>'.
+   * @return a new object of class '<em>Internal Vals</em>'.
    * @generated
    */
-  standardValue createstandardValue();
+  InternalVals createInternalVals();
+
+  /**
+   * Returns a new object of class '<em>Last JSON Finish</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Last JSON Finish</em>'.
+   * @generated
+   */
+  LastJSONFinish createLastJSONFinish();
+
+  /**
+   * Returns a new object of class '<em>Last JSON Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Last JSON Statement</em>'.
+   * @generated
+   */
+  LastJSONStatement createLastJSONStatement();
+
+  /**
+   * Returns a new object of class '<em>Standard Val</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Standard Val</em>'.
+   * @generated
+   */
+  StandardVal createStandardVal();
+
+  /**
+   * Returns a new object of class '<em>String Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Declaration</em>'.
+   * @generated
+   */
+  StringDeclaration createStringDeclaration();
 
   /**
    * Returns a new object of class '<em>Variable Declaration</em>'.

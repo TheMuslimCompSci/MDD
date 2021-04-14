@@ -31,28 +31,29 @@ public class TraceryLanguageParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, TraceryLanguageGrammarAccess grammarAccess) {
-			builder.put(grammarAccess.getInternalInstructionAccess().getAlternatives(), "rule__InternalInstruction__Alternatives");
+			builder.put(grammarAccess.getInternalInstructionsAccess().getAlternatives(), "rule__InternalInstructions__Alternatives");
 			builder.put(grammarAccess.getTraceryProgramAccess().getGroup(), "rule__TraceryProgram__Group__0");
-			builder.put(grammarAccess.getInitialValueAccess().getGroup(), "rule__InitialValue__Group__0");
-			builder.put(grammarAccess.getInternalInstructionAccess().getGroup_1(), "rule__InternalInstruction__Group_1__0");
-			builder.put(grammarAccess.getInternalInstructionAccess().getGroup_2(), "rule__InternalInstruction__Group_2__0");
-			builder.put(grammarAccess.getInternalInstructionAccess().getGroup_3(), "rule__InternalInstruction__Group_3__0");
-			builder.put(grammarAccess.getInternalInstructionAccess().getGroup_4(), "rule__InternalInstruction__Group_4__0");
-			builder.put(grammarAccess.getInternalInstructionAccess().getGroup_5(), "rule__InternalInstruction__Group_5__0");
-			builder.put(grammarAccess.getStandardJSONStatementAccess().getGroup(), "rule__StandardJSONStatement__Group__0");
-			builder.put(grammarAccess.getStartingJSONStatementAccess().getGroup(), "rule__StartingJSONStatement__Group__0");
-			builder.put(grammarAccess.getStandardValueAccess().getGroup(), "rule__StandardValue__Group__0");
-			builder.put(grammarAccess.getTraceryProgramAccess().getStartingInstructionAssignment_2(), "rule__TraceryProgram__StartingInstructionAssignment_2");
-			builder.put(grammarAccess.getTraceryProgramAccess().getInstructionsAssignment_3(), "rule__TraceryProgram__InstructionsAssignment_3");
-			builder.put(grammarAccess.getInitialJSONExpressionAccess().getVarAssignment(), "rule__InitialJSONExpression__VarAssignment");
-			builder.put(grammarAccess.getInitialValueAccess().getValueAssignment_2(), "rule__InitialValue__ValueAssignment_2");
-			builder.put(grammarAccess.getInternalInstructionAccess().getValueAssignment_0(), "rule__InternalInstruction__ValueAssignment_0");
-			builder.put(grammarAccess.getStandardJSONStatementAccess().getInitialValuesAssignment_6(), "rule__StandardJSONStatement__InitialValuesAssignment_6");
-			builder.put(grammarAccess.getStandardJSONStatementAccess().getStandardValuesAssignment_7(), "rule__StandardJSONStatement__StandardValuesAssignment_7");
-			builder.put(grammarAccess.getStartingJSONStatementAccess().getInitialValuesAssignment_3(), "rule__StartingJSONStatement__InitialValuesAssignment_3");
-			builder.put(grammarAccess.getStartingJSONStatementAccess().getStandardValuesAssignment_4(), "rule__StartingJSONStatement__StandardValuesAssignment_4");
-			builder.put(grammarAccess.getStandardValueAccess().getValueAssignment_3(), "rule__StandardValue__ValueAssignment_3");
-			builder.put(grammarAccess.getVariableDeclarationAccess().getNameAssignment(), "rule__VariableDeclaration__NameAssignment");
+			builder.put(grammarAccess.getFirstJSONStatementsAccess().getGroup(), "rule__FirstJSONStatements__Group__0");
+			builder.put(grammarAccess.getFirstJSONFinishAccess().getGroup(), "rule__FirstJSONFinish__Group__0");
+			builder.put(grammarAccess.getInitialValAccess().getGroup(), "rule__InitialVal__Group__0");
+			builder.put(grammarAccess.getInstructionAccess().getGroup(), "rule__Instruction__Group__0");
+			builder.put(grammarAccess.getInternalValsAccess().getGroup(), "rule__InternalVals__Group__0");
+			builder.put(grammarAccess.getLastJSONFinishAccess().getGroup(), "rule__LastJSONFinish__Group__0");
+			builder.put(grammarAccess.getLastJSONStatementAccess().getGroup(), "rule__LastJSONStatement__Group__0");
+			builder.put(grammarAccess.getStandardValAccess().getGroup(), "rule__StandardVal__Group__0");
+			builder.put(grammarAccess.getVariableDeclarationAccess().getGroup(), "rule__VariableDeclaration__Group__0");
+			builder.put(grammarAccess.getTraceryProgramAccess().getInstructionsAssignment_1(), "rule__TraceryProgram__InstructionsAssignment_1");
+			builder.put(grammarAccess.getFirstJSONStatementsAccess().getNameAssignment_1(), "rule__FirstJSONStatements__NameAssignment_1");
+			builder.put(grammarAccess.getFirstJSONStatementsAccess().getValueAssignment_4(), "rule__FirstJSONStatements__ValueAssignment_4");
+			builder.put(grammarAccess.getInitialValAccess().getValInternalInstructionAssignment_1(), "rule__InitialVal__ValInternalInstructionAssignment_1");
+			builder.put(grammarAccess.getInstructionAccess().getFirstInstructionAssignment_0(), "rule__Instruction__FirstInstructionAssignment_0");
+			builder.put(grammarAccess.getInstructionAccess().getLastInstructionAssignment_1(), "rule__Instruction__LastInstructionAssignment_1");
+			builder.put(grammarAccess.getInternalValsAccess().getValsAssignment_1(), "rule__InternalVals__ValsAssignment_1");
+			builder.put(grammarAccess.getLastJSONFinishAccess().getValsAssignment_2(), "rule__LastJSONFinish__ValsAssignment_2");
+			builder.put(grammarAccess.getLastJSONStatementAccess().getValueAssignment_2(), "rule__LastJSONStatement__ValueAssignment_2");
+			builder.put(grammarAccess.getStandardValAccess().getValInternalInstructionAssignment_2(), "rule__StandardVal__ValInternalInstructionAssignment_2");
+			builder.put(grammarAccess.getStringDeclarationAccess().getValueAssignment(), "rule__StringDeclaration__ValueAssignment");
+			builder.put(grammarAccess.getVariableDeclarationAccess().getVariableAssignment_1(), "rule__VariableDeclaration__VariableAssignment_1");
 		}
 	}
 	

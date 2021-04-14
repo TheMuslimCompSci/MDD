@@ -4,41 +4,52 @@ generate traceryLanguage "http://www.ac.uk/kcl/inf/languages/tracery/TraceryLang
 
 TraceryProgram:
 	'{'
-		{TraceryProgram}
-		startingInstruction = StartingJSONStatement
-		instructions += StandardJSONStatement*
+		instructions += Instruction
 	'}'
 ;
 
-InitialJSONExpression hidden():
-	var=[VariableDeclaration]
+FirstJSONStatements hidden():
+	'&' name=ID '&' ':' value = FirstJSONFinish
 ;
 
-initialValue hidden(WS):
-	{initialValue} '&'value+=InternalInstruction*'&'
+FirstJSONFinish hidden():
+    '[' InternalVals ']' ','
 ;
 
-InternalInstruction hidden():
-	value=STRING |
-	'#'VariableDeclaration'.a#' |
-	'#'VariableDeclaration'.capitalise#' |
-  	'#'VariableDeclaration'.ed#' |
-  	'#'VariableDeclaration'.the#' |
-	'#'VariableDeclaration'#' 
+InitialVal hidden(WS):
+	'&' valInternalInstruction += InternalInstructions+ '&'
 ;
 
-StandardJSONStatement hidden(WS):
-	',''&'InitialJSONExpression'&' ':' '[' initialValues+=initialValue standardValues+=standardValue* ']' 
+Instruction hidden(WS):
+	firstInstruction += FirstJSONStatements*
+	lastInstruction = LastJSONStatement
 ;
 
-StartingJSONStatement hidden(WS):
-	'&origin&' ':' '[' initialValues+=initialValue standardValues+=standardValue* ']'
+InternalInstructions hidden():
+	VariableDeclaration |
+	StringDeclaration
 ;
 
-standardValue hidden(WS):
-	{standardValue} ',''&'value+=InternalInstruction*'&'
+InternalVals hidden():
+    InitialVal vals += StandardVal*
+;
+
+LastJSONFinish hidden(WS):
+	'[' InitialVal vals += StandardVal* ']'
+;
+
+LastJSONStatement hidden(WS):
+	'&origin&' ':' value = LastJSONFinish
+;
+
+StandardVal hidden(WS):
+	',' '&' valInternalInstruction += InternalInstructions+ '&'
+;
+
+StringDeclaration hidden():
+	value = STRING
 ;
 
 VariableDeclaration hidden():
-	name=ID
+	'#' variable = [FirstJSONStatements] '#'
 ;

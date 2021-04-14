@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram#getStartingInstruction <em>Starting Instruction</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram#getInstructions <em>Instructions</em>}</li>
  * </ul>
  *
@@ -27,30 +26,8 @@ import org.eclipse.emf.ecore.EObject;
 public interface TraceryProgram extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Starting Instruction</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Starting Instruction</em>' containment reference.
-   * @see #setStartingInstruction(StartingJSONStatement)
-   * @see uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryLanguagePackage#getTraceryProgram_StartingInstruction()
-   * @model containment="true"
-   * @generated
-   */
-  StartingJSONStatement getStartingInstruction();
-
-  /**
-   * Sets the value of the '{@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram#getStartingInstruction <em>Starting Instruction</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Starting Instruction</em>' containment reference.
-   * @see #getStartingInstruction()
-   * @generated
-   */
-  void setStartingInstruction(StartingJSONStatement value);
-
-  /**
    * Returns the value of the '<em><b>Instructions</b></em>' containment reference list.
-   * The list contents are of type {@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.StandardJSONStatement}.
+   * The list contents are of type {@link uk.ac.kcl.inf.languages.tracery.traceryLanguage.Instruction}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Instructions</em>' containment reference list.
@@ -58,6 +35,6 @@ public interface TraceryProgram extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<StandardJSONStatement> getInstructions();
+  EList<Instruction> getInstructions();
 
 } // TraceryProgram
