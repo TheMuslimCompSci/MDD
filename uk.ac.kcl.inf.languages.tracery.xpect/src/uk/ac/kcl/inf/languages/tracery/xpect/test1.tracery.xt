@@ -12,10 +12,10 @@ XPECT generated  ---
  */
 {
 	// XPECT scope at hi --> hi, ...
-	&mde&:[&"fun"&],
-	&fareed&:[&"Hi my name is parth"&],
-	&parth&:[&"mde"&, &"is"&, &"so"&, &"interesting"&],
-	&myTest&:[&"mde"&, &#mde#&],
-	&start&:[&"Test" #myTest#&]
+	%mde%:[%"fun"%],
+	%fareed%:[%"Hi my name is parth"%],
+	%parth%:[%"mde"%, %"is"%, %"so"%, %"interesting"%],
+	%myTest%:[%"mde"%, %#mde#%],
+	%start%:[%"Test" #myTest#%]
 }
 

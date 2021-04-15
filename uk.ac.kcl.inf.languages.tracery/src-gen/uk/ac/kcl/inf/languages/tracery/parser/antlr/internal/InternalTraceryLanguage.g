@@ -128,9 +128,9 @@ ruleFirstJSONStatements returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='&'
+		otherlv_0='%'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getFirstJSONStatementsAccess().getAmpersandKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getFirstJSONStatementsAccess().getPercentSignKeyword_0());
 		}
 		(
 			(
@@ -150,9 +150,9 @@ ruleFirstJSONStatements returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='&'
+		otherlv_2='%'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getFirstJSONStatementsAccess().getAmpersandKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getFirstJSONStatementsAccess().getPercentSignKeyword_2());
 		}
 		otherlv_3=':'
 		{
@@ -253,9 +253,9 @@ ruleInitialVal returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='&'
+		otherlv_0='%'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getInitialValAccess().getAmpersandKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getInitialValAccess().getPercentSignKeyword_0());
 		}
 		(
 			(
@@ -276,9 +276,9 @@ ruleInitialVal returns [EObject current=null]
 				}
 			)
 		)+
-		otherlv_2='&'
+		otherlv_2='%'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getInitialValAccess().getAmpersandKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getInitialValAccess().getPercentSignKeyword_2());
 		}
 	)
 ;
@@ -537,7 +537,7 @@ ruleLastJSONStatement returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='&start&'
+		otherlv_0='%start%'
 		{
 			newLeafNode(otherlv_0, grammarAccess.getLastJSONStatementAccess().getStartKeyword_0());
 		}
@@ -596,9 +596,9 @@ ruleStandardVal returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getStandardValAccess().getCommaKeyword_0());
 		}
-		otherlv_1='&'
+		otherlv_1='%'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getStandardValAccess().getAmpersandKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getStandardValAccess().getPercentSignKeyword_1());
 		}
 		(
 			(
@@ -619,9 +619,9 @@ ruleStandardVal returns [EObject current=null]
 				}
 			)
 		)+
-		otherlv_3='&'
+		otherlv_3='%'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getStandardValAccess().getAmpersandKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getStandardValAccess().getPercentSignKeyword_3());
 		}
 	)
 ;

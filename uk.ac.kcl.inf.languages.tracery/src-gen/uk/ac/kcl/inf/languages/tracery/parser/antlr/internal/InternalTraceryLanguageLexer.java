@@ -88,10 +88,10 @@ public class InternalTraceryLanguageLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTraceryLanguage.g:13:7: ( '&' )
-            // InternalTraceryLanguage.g:13:9: '&'
+            // InternalTraceryLanguage.g:13:7: ( '%' )
+            // InternalTraceryLanguage.g:13:9: '%'
             {
-            match('&'); 
+            match('%'); 
 
             }
 
@@ -188,10 +188,10 @@ public class InternalTraceryLanguageLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTraceryLanguage.g:18:7: ( '&start&' )
-            // InternalTraceryLanguage.g:18:9: '&start&'
+            // InternalTraceryLanguage.g:18:7: ( '%start%' )
+            // InternalTraceryLanguage.g:18:9: '%start%'
             {
-            match("&start&"); 
+            match("%start%"); 
 
 
             }
@@ -859,7 +859,7 @@ public class InternalTraceryLanguageLexer extends Lexer {
     static final String DFA12_specialS =
         "\1\1\13\uffff\1\0\1\2\22\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\20\2\17\2\20\1\17\22\20\1\17\1\20\1\14\1\10\2\20\1\3\1\15\4\20\1\7\2\20\1\16\12\13\1\4\6\20\32\12\1\5\1\20\1\6\1\11\1\12\1\20\32\12\1\1\1\20\1\2\uff82\20",
+            "\11\20\2\17\2\20\1\17\22\20\1\17\1\20\1\14\1\10\1\20\1\3\1\20\1\15\4\20\1\7\2\20\1\16\12\13\1\4\6\20\32\12\1\5\1\20\1\6\1\11\1\12\1\20\32\12\1\1\1\20\1\2\uff82\20",
             "",
             "",
             "\1\23",
@@ -947,7 +947,7 @@ public class InternalTraceryLanguageLexer extends Lexer {
 
                         else if ( (LA12_0=='}') ) {s = 2;}
 
-                        else if ( (LA12_0=='&') ) {s = 3;}
+                        else if ( (LA12_0=='%') ) {s = 3;}
 
                         else if ( (LA12_0==':') ) {s = 4;}
 
@@ -973,7 +973,7 @@ public class InternalTraceryLanguageLexer extends Lexer {
 
                         else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 15;}
 
-                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='$' && LA12_0<='%')||(LA12_0>='(' && LA12_0<='+')||(LA12_0>='-' && LA12_0<='.')||(LA12_0>=';' && LA12_0<='@')||LA12_0=='\\'||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 16;}
+                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||LA12_0=='$'||LA12_0=='&'||(LA12_0>='(' && LA12_0<='+')||(LA12_0>='-' && LA12_0<='.')||(LA12_0>=';' && LA12_0<='@')||LA12_0=='\\'||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 16;}
 
                         if ( s>=0 ) return s;
                         break;

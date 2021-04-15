@@ -11,7 +11,7 @@ TraceryProgram:
 ;
 
 FirstJSONStatements hidden():
-	'&' name=ID '&' ':' value = FirstJSONFinish
+	'%' name=ID '%' ':' value = FirstJSONFinish
 ;
 
 FirstJSONFinish hidden():
@@ -19,7 +19,7 @@ FirstJSONFinish hidden():
 ;
 
 InitialVal hidden(WS):
-	'&' valInternalInstruction += InternalInstructions+ '&'
+	'%' valInternalInstruction += InternalInstructions+ '%'
 ;
 
 Instruction hidden(WS):
@@ -41,11 +41,11 @@ LastJSONFinish hidden(WS):
 ;
 
 LastJSONStatement hidden(WS):
-	'&start&' ':' value = LastJSONFinish
+	'%start%' ':' value = LastJSONFinish
 ;
 
 StandardVal hidden(WS):
-	',' '&' valInternalInstruction += InternalInstructions+ '&'
+	',' '%' valInternalInstruction += InternalInstructions+ '%'
 ;
 
 StringDeclaration hidden():

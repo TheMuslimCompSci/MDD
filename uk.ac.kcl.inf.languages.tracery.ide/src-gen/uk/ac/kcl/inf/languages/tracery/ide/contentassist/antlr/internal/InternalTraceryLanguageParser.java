@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalTraceryLanguageParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "'}'", "'&'", "':'", "'['", "']'", "','", "'&start&'", "'#'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "'}'", "'%'", "':'", "'['", "']'", "','", "'%start%'", "'#'"
     };
     public static final int RULE_STRING=5;
     public static final int RULE_SL_COMMENT=8;
@@ -1437,21 +1437,21 @@ public class InternalTraceryLanguageParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__FirstJSONStatements__Group__0__Impl"
-    // InternalTraceryLanguage.g:554:1: rule__FirstJSONStatements__Group__0__Impl : ( '&' ) ;
+    // InternalTraceryLanguage.g:554:1: rule__FirstJSONStatements__Group__0__Impl : ( '%' ) ;
     public final void rule__FirstJSONStatements__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryLanguage.g:558:1: ( ( '&' ) )
-            // InternalTraceryLanguage.g:559:1: ( '&' )
+            // InternalTraceryLanguage.g:558:1: ( ( '%' ) )
+            // InternalTraceryLanguage.g:559:1: ( '%' )
             {
-            // InternalTraceryLanguage.g:559:1: ( '&' )
-            // InternalTraceryLanguage.g:560:2: '&'
+            // InternalTraceryLanguage.g:559:1: ( '%' )
+            // InternalTraceryLanguage.g:560:2: '%'
             {
-             before(grammarAccess.getFirstJSONStatementsAccess().getAmpersandKeyword_0()); 
+             before(grammarAccess.getFirstJSONStatementsAccess().getPercentSignKeyword_0()); 
             match(input,13,FOLLOW_2); 
-             after(grammarAccess.getFirstJSONStatementsAccess().getAmpersandKeyword_0()); 
+             after(grammarAccess.getFirstJSONStatementsAccess().getPercentSignKeyword_0()); 
 
             }
 
@@ -1597,21 +1597,21 @@ public class InternalTraceryLanguageParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__FirstJSONStatements__Group__2__Impl"
-    // InternalTraceryLanguage.g:608:1: rule__FirstJSONStatements__Group__2__Impl : ( '&' ) ;
+    // InternalTraceryLanguage.g:608:1: rule__FirstJSONStatements__Group__2__Impl : ( '%' ) ;
     public final void rule__FirstJSONStatements__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryLanguage.g:612:1: ( ( '&' ) )
-            // InternalTraceryLanguage.g:613:1: ( '&' )
+            // InternalTraceryLanguage.g:612:1: ( ( '%' ) )
+            // InternalTraceryLanguage.g:613:1: ( '%' )
             {
-            // InternalTraceryLanguage.g:613:1: ( '&' )
-            // InternalTraceryLanguage.g:614:2: '&'
+            // InternalTraceryLanguage.g:613:1: ( '%' )
+            // InternalTraceryLanguage.g:614:2: '%'
             {
-             before(grammarAccess.getFirstJSONStatementsAccess().getAmpersandKeyword_2()); 
+             before(grammarAccess.getFirstJSONStatementsAccess().getPercentSignKeyword_2()); 
             match(input,13,FOLLOW_2); 
-             after(grammarAccess.getFirstJSONStatementsAccess().getAmpersandKeyword_2()); 
+             after(grammarAccess.getFirstJSONStatementsAccess().getPercentSignKeyword_2()); 
 
             }
 
@@ -2126,21 +2126,21 @@ public class InternalTraceryLanguageParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__InitialVal__Group__0__Impl"
-    // InternalTraceryLanguage.g:797:1: rule__InitialVal__Group__0__Impl : ( '&' ) ;
+    // InternalTraceryLanguage.g:797:1: rule__InitialVal__Group__0__Impl : ( '%' ) ;
     public final void rule__InitialVal__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryLanguage.g:801:1: ( ( '&' ) )
-            // InternalTraceryLanguage.g:802:1: ( '&' )
+            // InternalTraceryLanguage.g:801:1: ( ( '%' ) )
+            // InternalTraceryLanguage.g:802:1: ( '%' )
             {
-            // InternalTraceryLanguage.g:802:1: ( '&' )
-            // InternalTraceryLanguage.g:803:2: '&'
+            // InternalTraceryLanguage.g:802:1: ( '%' )
+            // InternalTraceryLanguage.g:803:2: '%'
             {
-             before(grammarAccess.getInitialValAccess().getAmpersandKeyword_0()); 
+             before(grammarAccess.getInitialValAccess().getPercentSignKeyword_0()); 
             match(input,13,FOLLOW_2); 
-             after(grammarAccess.getInitialValAccess().getAmpersandKeyword_0()); 
+             after(grammarAccess.getInitialValAccess().getPercentSignKeyword_0()); 
 
             }
 
@@ -2324,21 +2324,21 @@ public class InternalTraceryLanguageParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__InitialVal__Group__2__Impl"
-    // InternalTraceryLanguage.g:857:1: rule__InitialVal__Group__2__Impl : ( '&' ) ;
+    // InternalTraceryLanguage.g:857:1: rule__InitialVal__Group__2__Impl : ( '%' ) ;
     public final void rule__InitialVal__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryLanguage.g:861:1: ( ( '&' ) )
-            // InternalTraceryLanguage.g:862:1: ( '&' )
+            // InternalTraceryLanguage.g:861:1: ( ( '%' ) )
+            // InternalTraceryLanguage.g:862:1: ( '%' )
             {
-            // InternalTraceryLanguage.g:862:1: ( '&' )
-            // InternalTraceryLanguage.g:863:2: '&'
+            // InternalTraceryLanguage.g:862:1: ( '%' )
+            // InternalTraceryLanguage.g:863:2: '%'
             {
-             before(grammarAccess.getInitialValAccess().getAmpersandKeyword_2()); 
+             before(grammarAccess.getInitialValAccess().getPercentSignKeyword_2()); 
             match(input,13,FOLLOW_2); 
-             after(grammarAccess.getInitialValAccess().getAmpersandKeyword_2()); 
+             after(grammarAccess.getInitialValAccess().getPercentSignKeyword_2()); 
 
             }
 
@@ -3086,17 +3086,17 @@ public class InternalTraceryLanguageParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__LastJSONStatement__Group__0__Impl"
-    // InternalTraceryLanguage.g:1101:1: rule__LastJSONStatement__Group__0__Impl : ( '&start&' ) ;
+    // InternalTraceryLanguage.g:1101:1: rule__LastJSONStatement__Group__0__Impl : ( '%start%' ) ;
     public final void rule__LastJSONStatement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryLanguage.g:1105:1: ( ( '&start&' ) )
-            // InternalTraceryLanguage.g:1106:1: ( '&start&' )
+            // InternalTraceryLanguage.g:1105:1: ( ( '%start%' ) )
+            // InternalTraceryLanguage.g:1106:1: ( '%start%' )
             {
-            // InternalTraceryLanguage.g:1106:1: ( '&start&' )
-            // InternalTraceryLanguage.g:1107:2: '&start&'
+            // InternalTraceryLanguage.g:1106:1: ( '%start%' )
+            // InternalTraceryLanguage.g:1107:2: '%start%'
             {
              before(grammarAccess.getLastJSONStatementAccess().getStartKeyword_0()); 
             match(input,18,FOLLOW_2); 
@@ -3391,21 +3391,21 @@ public class InternalTraceryLanguageParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__StandardVal__Group__1__Impl"
-    // InternalTraceryLanguage.g:1209:1: rule__StandardVal__Group__1__Impl : ( '&' ) ;
+    // InternalTraceryLanguage.g:1209:1: rule__StandardVal__Group__1__Impl : ( '%' ) ;
     public final void rule__StandardVal__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryLanguage.g:1213:1: ( ( '&' ) )
-            // InternalTraceryLanguage.g:1214:1: ( '&' )
+            // InternalTraceryLanguage.g:1213:1: ( ( '%' ) )
+            // InternalTraceryLanguage.g:1214:1: ( '%' )
             {
-            // InternalTraceryLanguage.g:1214:1: ( '&' )
-            // InternalTraceryLanguage.g:1215:2: '&'
+            // InternalTraceryLanguage.g:1214:1: ( '%' )
+            // InternalTraceryLanguage.g:1215:2: '%'
             {
-             before(grammarAccess.getStandardValAccess().getAmpersandKeyword_1()); 
+             before(grammarAccess.getStandardValAccess().getPercentSignKeyword_1()); 
             match(input,13,FOLLOW_2); 
-             after(grammarAccess.getStandardValAccess().getAmpersandKeyword_1()); 
+             after(grammarAccess.getStandardValAccess().getPercentSignKeyword_1()); 
 
             }
 
@@ -3589,21 +3589,21 @@ public class InternalTraceryLanguageParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__StandardVal__Group__3__Impl"
-    // InternalTraceryLanguage.g:1269:1: rule__StandardVal__Group__3__Impl : ( '&' ) ;
+    // InternalTraceryLanguage.g:1269:1: rule__StandardVal__Group__3__Impl : ( '%' ) ;
     public final void rule__StandardVal__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryLanguage.g:1273:1: ( ( '&' ) )
-            // InternalTraceryLanguage.g:1274:1: ( '&' )
+            // InternalTraceryLanguage.g:1273:1: ( ( '%' ) )
+            // InternalTraceryLanguage.g:1274:1: ( '%' )
             {
-            // InternalTraceryLanguage.g:1274:1: ( '&' )
-            // InternalTraceryLanguage.g:1275:2: '&'
+            // InternalTraceryLanguage.g:1274:1: ( '%' )
+            // InternalTraceryLanguage.g:1275:2: '%'
             {
-             before(grammarAccess.getStandardValAccess().getAmpersandKeyword_3()); 
+             before(grammarAccess.getStandardValAccess().getPercentSignKeyword_3()); 
             match(input,13,FOLLOW_2); 
-             after(grammarAccess.getStandardValAccess().getAmpersandKeyword_3()); 
+             after(grammarAccess.getStandardValAccess().getPercentSignKeyword_3()); 
 
             }
 

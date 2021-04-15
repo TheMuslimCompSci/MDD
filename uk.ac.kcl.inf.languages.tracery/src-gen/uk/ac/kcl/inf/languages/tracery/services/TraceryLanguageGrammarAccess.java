@@ -57,23 +57,23 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 	public class FirstJSONStatementsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.FirstJSONStatements");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cAmpersandKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cPercentSignKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cAmpersandKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cPercentSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cValueAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cValueFirstJSONFinishParserRuleCall_4_0 = (RuleCall)cValueAssignment_4.eContents().get(0);
 		
 		//FirstJSONStatements hidden():
-		//	'&' name=ID '&' ':' value=FirstJSONFinish;
+		//	'%' name=ID '%' ':' value=FirstJSONFinish;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'&' name=ID '&' ':' value=FirstJSONFinish
+		//'%' name=ID '%' ':' value=FirstJSONFinish
 		public Group getGroup() { return cGroup; }
 		
-		//'&'
-		public Keyword getAmpersandKeyword_0() { return cAmpersandKeyword_0; }
+		//'%'
+		public Keyword getPercentSignKeyword_0() { return cPercentSignKeyword_0; }
 		
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -81,8 +81,8 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//'&'
-		public Keyword getAmpersandKeyword_2() { return cAmpersandKeyword_2; }
+		//'%'
+		public Keyword getPercentSignKeyword_2() { return cPercentSignKeyword_2; }
 		
 		//':'
 		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
@@ -123,20 +123,20 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 	public class InitialValElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.InitialVal");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cAmpersandKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cPercentSignKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValInternalInstructionAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValInternalInstructionInternalInstructionsParserRuleCall_1_0 = (RuleCall)cValInternalInstructionAssignment_1.eContents().get(0);
-		private final Keyword cAmpersandKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cPercentSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//InitialVal hidden(WS):
-		//	'&' valInternalInstruction+=InternalInstructions+ '&';
+		//	'%' valInternalInstruction+=InternalInstructions+ '%';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'&' valInternalInstruction+=InternalInstructions+ '&'
+		//'%' valInternalInstruction+=InternalInstructions+ '%'
 		public Group getGroup() { return cGroup; }
 		
-		//'&'
-		public Keyword getAmpersandKeyword_0() { return cAmpersandKeyword_0; }
+		//'%'
+		public Keyword getPercentSignKeyword_0() { return cPercentSignKeyword_0; }
 		
 		//valInternalInstruction+=InternalInstructions+
 		public Assignment getValInternalInstructionAssignment_1() { return cValInternalInstructionAssignment_1; }
@@ -144,8 +144,8 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		//InternalInstructions
 		public RuleCall getValInternalInstructionInternalInstructionsParserRuleCall_1_0() { return cValInternalInstructionInternalInstructionsParserRuleCall_1_0; }
 		
-		//'&'
-		public Keyword getAmpersandKeyword_2() { return cAmpersandKeyword_2; }
+		//'%'
+		public Keyword getPercentSignKeyword_2() { return cPercentSignKeyword_2; }
 	}
 	public class InstructionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.Instruction");
@@ -258,13 +258,13 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		private final RuleCall cValueLastJSONFinishParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		
 		//LastJSONStatement hidden(WS):
-		//	'&start&' ':' value=LastJSONFinish;
+		//	'%start%' ':' value=LastJSONFinish;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'&start&' ':' value=LastJSONFinish
+		//'%start%' ':' value=LastJSONFinish
 		public Group getGroup() { return cGroup; }
 		
-		//'&start&'
+		//'%start%'
 		public Keyword getStartKeyword_0() { return cStartKeyword_0; }
 		
 		//':'
@@ -280,23 +280,23 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.StandardVal");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cCommaKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cAmpersandKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cPercentSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cValInternalInstructionAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cValInternalInstructionInternalInstructionsParserRuleCall_2_0 = (RuleCall)cValInternalInstructionAssignment_2.eContents().get(0);
-		private final Keyword cAmpersandKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cPercentSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//StandardVal hidden(WS):
-		//	',' '&' valInternalInstruction+=InternalInstructions+ '&';
+		//	',' '%' valInternalInstruction+=InternalInstructions+ '%';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//',' '&' valInternalInstruction+=InternalInstructions+ '&'
+		//',' '%' valInternalInstruction+=InternalInstructions+ '%'
 		public Group getGroup() { return cGroup; }
 		
 		//','
 		public Keyword getCommaKeyword_0() { return cCommaKeyword_0; }
 		
-		//'&'
-		public Keyword getAmpersandKeyword_1() { return cAmpersandKeyword_1; }
+		//'%'
+		public Keyword getPercentSignKeyword_1() { return cPercentSignKeyword_1; }
 		
 		//valInternalInstruction+=InternalInstructions+
 		public Assignment getValInternalInstructionAssignment_2() { return cValInternalInstructionAssignment_2; }
@@ -304,8 +304,8 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 		//InternalInstructions
 		public RuleCall getValInternalInstructionInternalInstructionsParserRuleCall_2_0() { return cValInternalInstructionInternalInstructionsParserRuleCall_2_0; }
 		
-		//'&'
-		public Keyword getAmpersandKeyword_3() { return cAmpersandKeyword_3; }
+		//'%'
+		public Keyword getPercentSignKeyword_3() { return cPercentSignKeyword_3; }
 	}
 	public class StringDeclarationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.StringDeclaration");
@@ -431,7 +431,7 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 	}
 	
 	//FirstJSONStatements hidden():
-	//	'&' name=ID '&' ':' value=FirstJSONFinish;
+	//	'%' name=ID '%' ':' value=FirstJSONFinish;
 	public FirstJSONStatementsElements getFirstJSONStatementsAccess() {
 		return pFirstJSONStatements;
 	}
@@ -451,7 +451,7 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 	}
 	
 	//InitialVal hidden(WS):
-	//	'&' valInternalInstruction+=InternalInstructions+ '&';
+	//	'%' valInternalInstruction+=InternalInstructions+ '%';
 	public InitialValElements getInitialValAccess() {
 		return pInitialVal;
 	}
@@ -502,7 +502,7 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 	}
 	
 	//LastJSONStatement hidden(WS):
-	//	'&start&' ':' value=LastJSONFinish;
+	//	'%start%' ':' value=LastJSONFinish;
 	public LastJSONStatementElements getLastJSONStatementAccess() {
 		return pLastJSONStatement;
 	}
@@ -512,7 +512,7 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 	}
 	
 	//StandardVal hidden(WS):
-	//	',' '&' valInternalInstruction+=InternalInstructions+ '&';
+	//	',' '%' valInternalInstruction+=InternalInstructions+ '%';
 	public StandardValElements getStandardValAccess() {
 		return pStandardVal;
 	}

@@ -557,9 +557,9 @@ rule__FirstJSONStatements__Group__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getFirstJSONStatementsAccess().getAmpersandKeyword_0()); }
-	'&'
-	{ after(grammarAccess.getFirstJSONStatementsAccess().getAmpersandKeyword_0()); }
+	{ before(grammarAccess.getFirstJSONStatementsAccess().getPercentSignKeyword_0()); }
+	'%'
+	{ after(grammarAccess.getFirstJSONStatementsAccess().getPercentSignKeyword_0()); }
 )
 ;
 finally {
@@ -611,9 +611,9 @@ rule__FirstJSONStatements__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getFirstJSONStatementsAccess().getAmpersandKeyword_2()); }
-	'&'
-	{ after(grammarAccess.getFirstJSONStatementsAccess().getAmpersandKeyword_2()); }
+	{ before(grammarAccess.getFirstJSONStatementsAccess().getPercentSignKeyword_2()); }
+	'%'
+	{ after(grammarAccess.getFirstJSONStatementsAccess().getPercentSignKeyword_2()); }
 )
 ;
 finally {
@@ -800,9 +800,9 @@ rule__InitialVal__Group__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getInitialValAccess().getAmpersandKeyword_0()); }
-	'&'
-	{ after(grammarAccess.getInitialValAccess().getAmpersandKeyword_0()); }
+	{ before(grammarAccess.getInitialValAccess().getPercentSignKeyword_0()); }
+	'%'
+	{ after(grammarAccess.getInitialValAccess().getPercentSignKeyword_0()); }
 )
 ;
 finally {
@@ -860,9 +860,9 @@ rule__InitialVal__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getInitialValAccess().getAmpersandKeyword_2()); }
-	'&'
-	{ after(grammarAccess.getInitialValAccess().getAmpersandKeyword_2()); }
+	{ before(grammarAccess.getInitialValAccess().getPercentSignKeyword_2()); }
+	'%'
+	{ after(grammarAccess.getInitialValAccess().getPercentSignKeyword_2()); }
 )
 ;
 finally {
@@ -1105,7 +1105,7 @@ rule__LastJSONStatement__Group__0__Impl
 :
 (
 	{ before(grammarAccess.getLastJSONStatementAccess().getStartKeyword_0()); }
-	'&start&'
+	'%start%'
 	{ after(grammarAccess.getLastJSONStatementAccess().getStartKeyword_0()); }
 )
 ;
@@ -1212,9 +1212,9 @@ rule__StandardVal__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getStandardValAccess().getAmpersandKeyword_1()); }
-	'&'
-	{ after(grammarAccess.getStandardValAccess().getAmpersandKeyword_1()); }
+	{ before(grammarAccess.getStandardValAccess().getPercentSignKeyword_1()); }
+	'%'
+	{ after(grammarAccess.getStandardValAccess().getPercentSignKeyword_1()); }
 )
 ;
 finally {
@@ -1272,9 +1272,9 @@ rule__StandardVal__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getStandardValAccess().getAmpersandKeyword_3()); }
-	'&'
-	{ after(grammarAccess.getStandardValAccess().getAmpersandKeyword_3()); }
+	{ before(grammarAccess.getStandardValAccess().getPercentSignKeyword_3()); }
+	'%'
+	{ after(grammarAccess.getStandardValAccess().getPercentSignKeyword_3()); }
 )
 ;
 finally {
