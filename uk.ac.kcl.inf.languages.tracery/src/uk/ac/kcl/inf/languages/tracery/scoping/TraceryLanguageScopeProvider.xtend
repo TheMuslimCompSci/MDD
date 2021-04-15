@@ -15,7 +15,6 @@ class TraceryLanguageScopeProvider extends AbstractTraceryLanguageScopeProvider 
 
 /*
 package uk.ac.kcl.inf.languages.tracery.scoping
-
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EReference
 import org.eclipse.xtext.scoping.IScope
@@ -23,13 +22,9 @@ import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.InitialJSONExpression
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.TraceryProgram
 import uk.ac.kcl.inf.languages.tracery.traceryLanguage.VariableDeclaration
-
 import static org.eclipse.xtext.scoping.Scopes.*
-
 import static extension org.eclipse.xtext.EcoreUtil2.*
-
 class TraceryLanguageScopeProvider extends AbstractDeclarativeScopeProvider {
-
 	def IScope scope_InitialJSONExpression_var (InitialJSONExpression context, EReference ref) {
 		val containingTraceryProgram = context.getContainerOfType(TraceryProgram)
 		

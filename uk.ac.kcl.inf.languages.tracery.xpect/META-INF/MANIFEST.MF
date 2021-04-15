@@ -7,4 +7,5 @@ Automatic-Module-Name: uk.ac.kcl.inf.languages.tracery.xpect
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: uk.ac.kcl.inf.languages.tracery;bundle-version="1.0.0",
  uk.ac.kcl.inf.languages.tracery.ui;bundle-version="1.0.0",
- org.eclipse.xpect.xtext.lib;bundle-version="0.2.0"
+ org.eclipse.xpect.xtext.lib;bundle-version="0.2.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.24.0"

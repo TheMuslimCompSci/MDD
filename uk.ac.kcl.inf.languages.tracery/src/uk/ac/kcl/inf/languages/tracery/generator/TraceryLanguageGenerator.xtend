@@ -28,71 +28,73 @@ class TraceryLanguageGenerator extends AbstractGenerator {
 		val instructions = program.instructions.head.eContents	
 
 	'''
-		{
-		«FOR instruction : instructions»
-			«val sections = new ArrayList()»
-			«IF FirstJSONStatementsImpl == instruction.class»
-				«val JSONStatement = instruction as FirstJSONStatements»
-				«val value = JSONStatement.value as InitialValImpl»
-				«val internalInstruction = value.valInternalInstruction»
-				«FOR sectionsArray : internalInstruction»
-					«IF StringDeclarationImpl != sectionsArray.class»
-						«val variableDeclaration = sectionsArray as VariableDeclarationImpl»
-						«val variable = variableDeclaration.variable as FirstJSONStatements»
-						«val finish = sections.add(' "#' + variable.name + '#"')»						
-					«ELSE»
-						«val declareString = sectionsArray as StringDeclarationImpl»
-						«val finish = sections.add('"' + declareString.value + '"')»
-					«ENDIF»
-				«ENDFOR»
-				«val externalInstruction = value.vals»
-				«FOR StandardVal standardValue : externalInstruction»
-					«val internalStandard = standardValue.valInternalInstruction»
-					«FOR sectionsArray : internalStandard»
-						«IF StringDeclarationImpl != sectionsArray.class»
-							«val variableDeclaration = sectionsArray as VariableDeclarationImpl»
-							«val variable = variableDeclaration.variable as FirstJSONStatements»
-							«val finish = sections.add(' "#' + variable.name + '#"')»							
-						«ELSE»	
-							«val declareString = sectionsArray as StringDeclarationImpl»
-							«val finish = sections.add('"' + declareString.value + '"')»
-						«ENDIF»
-					«ENDFOR»
-				«ENDFOR»		
-				«'\t' + '"' + JSONStatement.getName() + '"' + ": [" + sections.join(",") + "],"»
-			«ELSE»
-				«val JSONStatement = instruction as LastJSONStatement»
-				«val value = JSONStatement.value as InitialValImpl»
-				«val internalInstruction = value.valInternalInstruction»
-				«FOR sectionsArray : internalInstruction»
-					«IF StringDeclarationImpl != sectionsArray.class»
-						«val variableDeclaration = sectionsArray as VariableDeclarationImpl»
-						«val variable = variableDeclaration.variable as FirstJSONStatements»
-						«val finish = sections.add(' "#' + variable.name + '#"')»					
-					«ELSE»	
-						«val declareString = sectionsArray as StringDeclarationImpl»
-						«val finish = sections.add('"' + declareString.value + '"')»
-					«ENDIF»
-				«ENDFOR»
-				«val externalInstruction = value.vals»
-				«FOR StandardVal standardValue : externalInstruction»
-					«val internalStandard = standardValue.valInternalInstruction»
-					«FOR sectionsArray : internalStandard»
-						«IF StringDeclarationImpl != sectionsArray.class»
-							«val variableDeclaration = sectionsArray as VariableDeclarationImpl»
-							«val variable = variableDeclaration.variable as FirstJSONStatements»
-							«val finish = sections.add(' "#' + variable.name + '#"')»						
-						«ELSE»	
-							«val declareString = sectionsArray as StringDeclarationImpl»
-							«val finish = sections.add('"' + declareString.value + '"')»
-						«ENDIF»
-					«ENDFOR»
-				«ENDFOR»
-				«'\t' + '"' + "origin" + '"' + ": [" + sections.join(",")  + "]"»
-			«ENDIF»
-		«ENDFOR»
-		}
-	'''
+{
+«FOR instruction : instructions»««« iterate through all instructions in the grammar
+«val sections = new ArrayList()»««« each section of the grammar object will be stored in a list 
+«IF FirstJSONStatementsImpl == instruction.class»««« check if the first JSON statement is the same as the current instruction class
+«val JSONStatement = instruction as FirstJSONStatements»
+«val value = JSONStatement.value as InitialValImpl»
+«val internalInstruction = value.valInternalInstruction»
+«FOR sectionsArray : internalInstruction»««« iterate through all sections of the inner instructions in the grammar
+«IF StringDeclarationImpl != sectionsArray.class»««« check if the declared string is the same as the current section
+«val variableDeclaration = sectionsArray as VariableDeclarationImpl»
+«val variable = variableDeclaration.variable as FirstJSONStatements»
+«val finish = sections.add(' "#' + variable.name + '#"')»««« Enclose the current symbol in hashtags if it is a symbol to finish off
+«ELSE»
+«val declareString = sectionsArray as StringDeclarationImpl»
+«val finish = sections.add('"' + declareString.value + '"')»««« Enclose the current symbol in speech marks if it is a string to finish off
+«ENDIF»
+«ENDFOR»
+«val externalInstruction = value.vals»
+«FOR StandardVal standardValue : externalInstruction»««« iterate through all standard values of the outer instructions in the grammar
+«val internalStandard = standardValue.valInternalInstruction»
+«FOR sectionsArray : internalStandard»««« iterate through all sections of the inner instructions that have standard values in the grammar							
+«IF StringDeclarationImpl != sectionsArray.class»««« check if the declared string is the same as the current section
+«val variableDeclaration = sectionsArray as VariableDeclarationImpl»
+«val variable = variableDeclaration.variable as FirstJSONStatements»
+«val finish = sections.add(' "#' + variable.name + '#"')»««« Enclose the current symbol in hashtags if it is a symbol to finish off	
+«ELSE»
+«val declareString = sectionsArray as StringDeclarationImpl»
+«val finish = sections.add('"' + declareString.value + '"')»««« Enclose the current symbol in speech marks if it is a string to finish off							
+«ENDIF»
+«ENDFOR»
+«ENDFOR»
+«'\t' + '"' + JSONStatement.getName() + '"' + ": [" + sections.join(",") + "],"»««« Format the grammar object correctly		
+«ELSE»
+«val JSONStatement = instruction as LastJSONStatement»
+«val value = JSONStatement.value as InitialValImpl»
+«val internalInstruction = value.valInternalInstruction»
+«FOR sectionsArray : internalInstruction»««« iterate through all sections of the inner instructions in the grammar	
+«IF StringDeclarationImpl != sectionsArray.class»««« check if the declared string is the same as the current section				
+«val variableDeclaration = sectionsArray as VariableDeclarationImpl»
+«val variable = variableDeclaration.variable as FirstJSONStatements»
+«val finish = sections.add(' "#' + variable.name + '#"')»««« Enclose the current symbol in hashtags if it is a symbol to finish off																	
+«ELSE»
+«val declareString = sectionsArray as StringDeclarationImpl»
+«val finish = sections.add('"' + declareString.value + '"')»««« Enclose the current symbol in speech marks if it is a string to finish off						
+«ENDIF»
+«ENDFOR»
+«val externalInstruction = value.vals»
+«FOR StandardVal standardValue : externalInstruction»««« iterate through all standard values of the outer instructions in the grammar				
+«val internalStandard = standardValue.valInternalInstruction»
+«FOR sectionsArray : internalStandard»««« iterate through all sections of the inner instructions that have standard values in the grammar						
+«IF StringDeclarationImpl != sectionsArray.class»««« check if the declared string is the same as the current section										
+«val variableDeclaration = sectionsArray as VariableDeclarationImpl»
+«val variable = variableDeclaration.variable as FirstJSONStatements»
+«val finish = sections.add(' "#' + variable.name + '#"')»««« Enclose the current symbol in hashtags if it is a symbol to finish off
+«ELSE»	
+«val declareString = sectionsArray as StringDeclarationImpl»
+«val finish = sections.add('"' + declareString.value + '"')»««« Enclose the current symbol in speech marks if it is a string to finish off						
+
+«ENDIF»
+«ENDFOR»
+«ENDFOR»
+««« Format the grammar object correctly						
+«'\t' + '"' + "origin" + '"' + ": [" + sections.join(",")  + "]"»
+«ENDIF»
+«ENDFOR»
+}
+'''
 
 	}	
 

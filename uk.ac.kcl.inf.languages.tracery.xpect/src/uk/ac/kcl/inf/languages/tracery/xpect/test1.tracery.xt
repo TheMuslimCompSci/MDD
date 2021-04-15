@@ -1,9 +1,21 @@
 /* XPECT_SETUP uk.ac.kcl.inf.languages.tracery.xpect.XPectTests END_SETUP */
+/*
+XPECT generated  ---
 {
-	// XPECT scope at hi --> hi, myTest, ...
+	"hi": ["blue"],
+	"myTest": ["hi", "#hi#"],
+	"fareed": ["Hi my name is parth"],
+	"parth": ["haha","lol","gg","wp"],
+	"origin": ["Test", "#myTest#"]
+}  
+---
+ */
+{
+	// XPECT scope at hi --> hi, ...
 	&hi&:[&"blue"&],
 	&myTest&:[&"hi"&, &#hi#&],
 	&fareed&:[&"Hi my name is parth"&],
 	&parth&:[&"haha"&, &"lol"&, &"gg"&, &"wp"&],
 	&origin&:[&"Test" #myTest#&]
 }
+
