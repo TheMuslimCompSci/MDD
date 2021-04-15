@@ -41,7 +41,7 @@ LastJSONFinish hidden(WS):
 ;
 
 LastJSONStatement hidden(WS):
-	'&origin&' ':' value = LastJSONFinish
+	'&start&' ':' value = LastJSONFinish
 ;
 
 StandardVal hidden(WS):

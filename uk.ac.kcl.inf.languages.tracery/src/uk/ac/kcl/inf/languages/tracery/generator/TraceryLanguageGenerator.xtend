@@ -90,7 +90,7 @@ class TraceryLanguageGenerator extends AbstractGenerator {
 «ENDFOR»
 «ENDFOR»
 ««« Format the grammar object correctly						
-«'\t' + '"' + "origin" + '"' + ": [" + sections.join(",")  + "]"»
+«'\t' + '"' + "start" + '"' + ": [" + sections.join(",")  + "]"»
 «ENDIF»
 «ENDFOR»
 }

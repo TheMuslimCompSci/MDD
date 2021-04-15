@@ -188,10 +188,10 @@ public class InternalTraceryLanguageLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTraceryLanguage.g:18:7: ( '&origin&' )
-            // InternalTraceryLanguage.g:18:9: '&origin&'
+            // InternalTraceryLanguage.g:18:7: ( '&start&' )
+            // InternalTraceryLanguage.g:18:9: '&start&'
             {
-            match("&origin&"); 
+            match("&start&"); 
 
 
             }
@@ -851,13 +851,13 @@ public class InternalTraceryLanguageLexer extends Lexer {
     static final String DFA12_eofS =
         "\40\uffff";
     static final String DFA12_minS =
-        "\1\0\2\uffff\1\157\5\uffff\1\101\2\uffff\2\0\1\52\21\uffff";
+        "\1\0\2\uffff\1\163\5\uffff\1\101\2\uffff\2\0\1\52\21\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\2\uffff\1\157\5\uffff\1\172\2\uffff\2\uffff\1\57\21\uffff";
+        "\1\uffff\2\uffff\1\163\5\uffff\1\172\2\uffff\2\uffff\1\57\21\uffff";
     static final String DFA12_acceptS =
         "\1\uffff\1\1\1\2\1\uffff\1\4\1\5\1\6\1\7\1\11\1\uffff\1\12\1\13\3\uffff\1\17\1\20\1\1\1\2\1\10\1\3\1\4\1\5\1\6\1\7\1\11\1\12\1\13\1\14\1\15\1\16\1\17";
     static final String DFA12_specialS =
-        "\1\0\13\uffff\1\1\1\2\22\uffff}>";
+        "\1\1\13\uffff\1\0\1\2\22\uffff}>";
     static final String[] DFA12_transitionS = {
             "\11\20\2\17\2\20\1\17\22\20\1\17\1\20\1\14\1\10\2\20\1\3\1\15\4\20\1\7\2\20\1\16\12\13\1\4\6\20\32\12\1\5\1\20\1\6\1\11\1\12\1\20\32\12\1\1\1\20\1\2\uff82\20",
             "",
@@ -930,6 +930,16 @@ public class InternalTraceryLanguageLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
+                        int LA12_12 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_12>='\u0000' && LA12_12<='\uFFFF')) ) {s = 28;}
+
+                        else s = 16;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
                         int LA12_0 = input.LA(1);
 
                         s = -1;
@@ -964,16 +974,6 @@ public class InternalTraceryLanguageLexer extends Lexer {
                         else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 15;}
 
                         else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='$' && LA12_0<='%')||(LA12_0>='(' && LA12_0<='+')||(LA12_0>='-' && LA12_0<='.')||(LA12_0>=';' && LA12_0<='@')||LA12_0=='\\'||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 16;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA12_12 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_12>='\u0000' && LA12_12<='\uFFFF')) ) {s = 28;}
-
-                        else s = 16;
 
                         if ( s>=0 ) return s;
                         break;

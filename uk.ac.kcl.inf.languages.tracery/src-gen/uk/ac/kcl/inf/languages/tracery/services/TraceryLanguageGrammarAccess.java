@@ -252,20 +252,20 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 	public class LastJSONStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.languages.tracery.TraceryLanguage.LastJSONStatement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cOriginKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cStartKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cValueLastJSONFinishParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		
 		//LastJSONStatement hidden(WS):
-		//	'&origin&' ':' value=LastJSONFinish;
+		//	'&start&' ':' value=LastJSONFinish;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'&origin&' ':' value=LastJSONFinish
+		//'&start&' ':' value=LastJSONFinish
 		public Group getGroup() { return cGroup; }
 		
-		//'&origin&'
-		public Keyword getOriginKeyword_0() { return cOriginKeyword_0; }
+		//'&start&'
+		public Keyword getStartKeyword_0() { return cStartKeyword_0; }
 		
 		//':'
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
@@ -502,7 +502,7 @@ public class TraceryLanguageGrammarAccess extends AbstractElementFinder.Abstract
 	}
 	
 	//LastJSONStatement hidden(WS):
-	//	'&origin&' ':' value=LastJSONFinish;
+	//	'&start&' ':' value=LastJSONFinish;
 	public LastJSONStatementElements getLastJSONStatementAccess() {
 		return pLastJSONStatement;
 	}

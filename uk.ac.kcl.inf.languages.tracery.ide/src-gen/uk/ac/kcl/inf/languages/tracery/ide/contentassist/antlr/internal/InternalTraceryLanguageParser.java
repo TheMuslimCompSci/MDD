@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalTraceryLanguageParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "'}'", "'&'", "':'", "'['", "']'", "','", "'&origin&'", "'#'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "'}'", "'&'", "':'", "'['", "']'", "','", "'&start&'", "'#'"
     };
     public static final int RULE_STRING=5;
     public static final int RULE_SL_COMMENT=8;
@@ -3086,21 +3086,21 @@ public class InternalTraceryLanguageParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__LastJSONStatement__Group__0__Impl"
-    // InternalTraceryLanguage.g:1101:1: rule__LastJSONStatement__Group__0__Impl : ( '&origin&' ) ;
+    // InternalTraceryLanguage.g:1101:1: rule__LastJSONStatement__Group__0__Impl : ( '&start&' ) ;
     public final void rule__LastJSONStatement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryLanguage.g:1105:1: ( ( '&origin&' ) )
-            // InternalTraceryLanguage.g:1106:1: ( '&origin&' )
+            // InternalTraceryLanguage.g:1105:1: ( ( '&start&' ) )
+            // InternalTraceryLanguage.g:1106:1: ( '&start&' )
             {
-            // InternalTraceryLanguage.g:1106:1: ( '&origin&' )
-            // InternalTraceryLanguage.g:1107:2: '&origin&'
+            // InternalTraceryLanguage.g:1106:1: ( '&start&' )
+            // InternalTraceryLanguage.g:1107:2: '&start&'
             {
-             before(grammarAccess.getLastJSONStatementAccess().getOriginKeyword_0()); 
+             before(grammarAccess.getLastJSONStatementAccess().getStartKeyword_0()); 
             match(input,18,FOLLOW_2); 
-             after(grammarAccess.getLastJSONStatementAccess().getOriginKeyword_0()); 
+             after(grammarAccess.getLastJSONStatementAccess().getStartKeyword_0()); 
 
             }
 

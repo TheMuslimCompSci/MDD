@@ -1104,9 +1104,9 @@ rule__LastJSONStatement__Group__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getLastJSONStatementAccess().getOriginKeyword_0()); }
-	'&origin&'
-	{ after(grammarAccess.getLastJSONStatementAccess().getOriginKeyword_0()); }
+	{ before(grammarAccess.getLastJSONStatementAccess().getStartKeyword_0()); }
+	'&start&'
+	{ after(grammarAccess.getLastJSONStatementAccess().getStartKeyword_0()); }
 )
 ;
 finally {

@@ -1,7 +1,7 @@
 {
-	"hi": ["blue"],
-	"myTest": ["hi", "#hi#"],
+	"mde": ["fun"],
 	"fareed": ["Hi my name is parth"],
-	"parth": ["haha","lol","gg","wp"],
-	"origin": ["Test", "#myTest#"]
+	"parth": ["mde","is","so","interesting"],
+	"myTest": ["mde", "#mde#"],
+	"start": ["Test", "#myTest#"]
 }

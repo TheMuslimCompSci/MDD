@@ -537,9 +537,9 @@ ruleLastJSONStatement returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='&origin&'
+		otherlv_0='&start&'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getLastJSONStatementAccess().getOriginKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getLastJSONStatementAccess().getStartKeyword_0());
 		}
 		otherlv_1=':'
 		{

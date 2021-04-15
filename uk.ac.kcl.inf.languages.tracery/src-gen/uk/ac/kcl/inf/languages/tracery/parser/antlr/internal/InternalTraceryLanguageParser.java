@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "'}'", "'&'", "':'", "'['", "']'", "','", "'&origin&'", "'#'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "'}'", "'&'", "':'", "'['", "']'", "','", "'&start&'", "'#'"
     };
     public static final int RULE_STRING=5;
     public static final int RULE_SL_COMMENT=8;
@@ -1276,7 +1276,7 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLastJSONStatement"
-    // InternalTraceryLanguage.g:531:1: ruleLastJSONStatement returns [EObject current=null] : (otherlv_0= '&origin&' otherlv_1= ':' ( (lv_value_2_0= ruleLastJSONFinish ) ) ) ;
+    // InternalTraceryLanguage.g:531:1: ruleLastJSONStatement returns [EObject current=null] : (otherlv_0= '&start&' otherlv_1= ':' ( (lv_value_2_0= ruleLastJSONFinish ) ) ) ;
     public final EObject ruleLastJSONStatement() throws RecognitionException {
         EObject current = null;
 
@@ -1290,15 +1290,15 @@ public class InternalTraceryLanguageParser extends AbstractInternalAntlrParser {
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
 
         try {
-            // InternalTraceryLanguage.g:538:2: ( (otherlv_0= '&origin&' otherlv_1= ':' ( (lv_value_2_0= ruleLastJSONFinish ) ) ) )
-            // InternalTraceryLanguage.g:539:2: (otherlv_0= '&origin&' otherlv_1= ':' ( (lv_value_2_0= ruleLastJSONFinish ) ) )
+            // InternalTraceryLanguage.g:538:2: ( (otherlv_0= '&start&' otherlv_1= ':' ( (lv_value_2_0= ruleLastJSONFinish ) ) ) )
+            // InternalTraceryLanguage.g:539:2: (otherlv_0= '&start&' otherlv_1= ':' ( (lv_value_2_0= ruleLastJSONFinish ) ) )
             {
-            // InternalTraceryLanguage.g:539:2: (otherlv_0= '&origin&' otherlv_1= ':' ( (lv_value_2_0= ruleLastJSONFinish ) ) )
-            // InternalTraceryLanguage.g:540:3: otherlv_0= '&origin&' otherlv_1= ':' ( (lv_value_2_0= ruleLastJSONFinish ) )
+            // InternalTraceryLanguage.g:539:2: (otherlv_0= '&start&' otherlv_1= ':' ( (lv_value_2_0= ruleLastJSONFinish ) ) )
+            // InternalTraceryLanguage.g:540:3: otherlv_0= '&start&' otherlv_1= ':' ( (lv_value_2_0= ruleLastJSONFinish ) )
             {
             otherlv_0=(Token)match(input,18,FOLLOW_7); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getLastJSONStatementAccess().getOriginKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getLastJSONStatementAccess().getStartKeyword_0());
             		
             otherlv_1=(Token)match(input,14,FOLLOW_8); 
 
